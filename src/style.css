@@ -1,0 +1,348 @@
+/* Stylesheet uses Level 3 Media Queries. Level 4 coverage still spotty. */
+body {
+    margin-top: 0;
+    background: #fffbff;
+}
+
+/* UPDATE THIS */
+img { 
+  max-width: 100%; 
+}
+
+
+#container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start; /* main axis */
+    align-items: flex-start; /* cross axis */
+}
+
+header {
+    width: 90%;
+    margin: 0;
+    padding: 0.25em 5%;
+    background: #000;
+    flex: initial;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start; /* main axis */
+    align-items: center; /* cross axis */
+    position: relative;
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    background: #000;
+    width: 2000px;
+    left: 100%;
+}
+
+header::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    background: #000;
+    width: 2000px;
+    right: 100%;
+}
+
+.pano {
+    width: 100%;
+    /*max-width: 1280px;*/
+    margin: 0 auto;
+    padding: 0;
+    flex: initial;
+}
+
+figure {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+figure.logo {
+    width: 2.2em;
+    margin-right: 1em;
+}
+
+figure.full-width {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    background: #000; /* needed to fill gap above form */
+}
+
+form {
+    width: 90%;
+    margin: 0;
+    padding: 1em 5%;
+    background: #000;
+    flex: initial;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start; /* main axis */
+    align-items: center; /* cross axis */
+    position: relative;
+}
+
+form::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    background: #000;
+    width: 2000px;
+    left: 100%;
+}
+
+form::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    background: #000;
+    width: 2000px;
+    right: 100%;
+}
+
+input {
+    width: 35%;
+    margin: 0;
+    padding: 0.5em 2em;
+}
+
+input::placeholder {
+    color: #212121;
+}
+
+button {
+    width: 120px;
+    margin: 0 1em;
+    padding: 0;
+    border-radius: 8px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 1.8;
+    font-weight: 500;
+}
+
+.btn-go {
+    border: 1px solid #9cd76e;
+    background: #9cd76e;
+    color: #000;
+}
+
+.btn-clear {
+    border: 1px solid #fff;
+    background: #000;
+    color: #fff;
+}
+
+section {
+    width: 35%;
+    margin: 0;
+    padding: 1em 0 1em 5%;
+    flex: initial;
+}
+
+aside {
+    width: 50%;
+    margin: 0;
+    padding: 1em 5%;
+    flex: initial;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start; /* main axis */
+    align-items: flex-start; /* cross axis */
+}
+
+.alert {
+    width: 90%;
+    margin: 1em 0;
+    padding: 1em 5%;
+    background: #ede0eb; /* neutral 90 */
+    flex: initial;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start; /* main axis */
+    align-items: flex-start; /* cross axis */
+}
+
+.alert-type {
+    width: 100%;
+    margin: 0%;
+    padding: 0;
+    flex: initial;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start; /* main axis */
+    align-items: flex-start; /* cross axis */
+}
+
+.badge {
+    width: 25%;
+    margin: 0;
+    padding: 0;
+    background: #ff8d3b;
+    text-align: center;
+    flex: initial;
+}
+
+.closure {
+    background: #baad37;
+}
+
+.info {
+    background: #76d1ff;
+}
+
+.caution {
+    background: #ff8d3b;
+}
+
+.danger {
+    background: #ff897f;
+}
+
+.general {
+    background: #d7c2b9;
+}
+
+.alert-text {
+    width: 100%;
+    margin: 0%;
+    padding: 0;
+    flex: initial;
+}
+
+/* Font styles and their media queries */
+h1 {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 600;
+    color: #fff;
+}
+
+h2 {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 500;
+    color: #201a18;
+}
+
+h3 {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 1.2;
+    font-weight: 500;
+    color: #000;
+    text-transform: uppercase;
+    margin-top: 0.4em;
+    margin-bottom: 0.4em;
+}
+
+p {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 1.8;
+    font-weight: 400;
+    color: #201a18;
+}
+
+dl {
+    width: 100%;
+    margin: 1em 0;
+    padding: 0;
+}
+
+dd {
+    margin: 0 0 1em 0;
+    padding: 0;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 2.2;
+    font-weight: 400;
+    color: #281900;
+    background: #ede0eb; /* neutral 90 */
+    text-align: center;
+}
+
+/* Media queries for fonts */
+@media (min-width: 300px) and (max-width: 399px) {
+    p, legend, label, input::placeholder, input[type="text"], dt, dd, button {
+        font-size: 0.875em; /* 14px */
+    }
+
+    h1 {
+        font-size: 1.125em; /* 18 px */
+    }
+
+    h2 {
+        font-size: 1em; /* 16px */
+    }
+
+    h3 {
+        font-size: 0.875em; /* 14px */
+    }
+}
+
+@media (min-width: 400px) and (max-width: 499px) {
+    p, legend, label, input::placeholder, input[type="text"], dt, dd {
+        font-size: 0.9375em; /* 15px */
+    }
+
+    h1 {
+        font-size: 1.1875em; /* 19px */
+    }
+
+    h2 {
+        font-size: 1.0625em; /* 17px */
+    }
+
+    h3 {
+        font-size: 0.9375em; /* 15px */
+    }
+}
+
+@media (min-width: 500px) and (max-width: 599px) {
+    p, legend, label, input::placeholder, input[type="text"], dt, dd, button {
+        font-size: 1em; /* 16px */
+    }
+
+    h1 {
+        font-size: 1.25em; /* 20px */
+    }
+
+    h2 {
+        font-size: 1.125em; /* 18 px */
+    }
+
+    h3 {
+        font-size: 1em; /* 16px */
+    }
+}
+
+@media (min-width: 600px) {
+    p, legend, label, input::placeholder, input[type="text"], dt, dd, button {
+        font-size: 1.0625em; /* 17px */
+    }
+
+    h1 {
+        font-size: 1.3125em; /* 21px */
+    }
+
+    h2 {
+        font-size: 1.1875em; /* 19px */
+    }
+
+    h3 {
+        font-size: 0.875em; /* 14px */
+    }
+}
