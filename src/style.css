@@ -9,7 +9,6 @@ img {
   max-width: 100%; 
 }
 
-
 #container {
     width: 100%;
     max-width: 1280px;
@@ -60,12 +59,27 @@ header::after {
     margin: 0 auto;
     padding: 0;
     flex: initial;
+    position: relative;
+}
+
+.pano-title {
+    margin: 0;
+    padding: 0 1.5em;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 2.5;
+    font-weight: 500;
+    color: #fff;
+    position: absolute;
+    left: 5%;
+    bottom: 0.75em;
+    background: rgba(0,0,0,0.6);
 }
 
 figure {
     width: 100%;
     margin: 0;
     padding: 0;
+
 }
 
 figure.logo {
@@ -155,6 +169,13 @@ section {
     flex: initial;
 }
 
+#overview-about {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    flex: initial;
+}
+
 aside {
     width: 50%;
     margin: 0;
@@ -164,6 +185,24 @@ aside {
     flex-flow: row wrap;
     justify-content: flex-start; /* main axis */
     align-items: flex-start; /* cross axis */
+}
+
+.list {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    flex: initial;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start; /* main axis */
+    align-items: flex-start; /* cross axis */
+}
+
+.results notice {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    flex: initial;
 }
 
 .alert {
@@ -193,7 +232,14 @@ aside {
     width: 25%;
     margin: 0;
     padding: 0;
-    background: #ff8d3b;
+    text-align: center;
+    flex: initial;
+}
+
+.badge-big {
+    width: 35%;
+    margin: 1em 0 0 0;
+    padding: 0;
     text-align: center;
     flex: initial;
 }
@@ -236,11 +282,18 @@ h1 {
 h2 {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     line-height: 1.5;
-    font-weight: 500;
+    font-weight: 600;
     color: #201a18;
 }
 
 h3 {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 500;
+    color: #201a18;
+}
+
+h4 {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     line-height: 1.2;
     font-weight: 500;
@@ -274,6 +327,11 @@ dd {
     text-align: center;
 }
 
+dd:hover {
+    cursor: pointer;
+    background: #d0c4bf; /* neutral 80 */
+}
+
 /* Media queries for fonts */
 @media (min-width: 300px) and (max-width: 399px) {
     p, legend, label, input::placeholder, input[type="text"], dt, dd, button {
@@ -284,11 +342,11 @@ dd {
         font-size: 1.125em; /* 18 px */
     }
 
-    h2 {
+    h2, h3, .pano-title {
         font-size: 1em; /* 16px */
     }
 
-    h3 {
+    h4 {
         font-size: 0.875em; /* 14px */
     }
 }
@@ -302,11 +360,11 @@ dd {
         font-size: 1.1875em; /* 19px */
     }
 
-    h2 {
+    h2, h3, .pano-title {
         font-size: 1.0625em; /* 17px */
     }
 
-    h3 {
+    h4 {
         font-size: 0.9375em; /* 15px */
     }
 }
@@ -320,11 +378,11 @@ dd {
         font-size: 1.25em; /* 20px */
     }
 
-    h2 {
+    h2, h3, .pano-title {
         font-size: 1.125em; /* 18 px */
     }
 
-    h3 {
+    h4 {
         font-size: 1em; /* 16px */
     }
 }
@@ -338,11 +396,11 @@ dd {
         font-size: 1.3125em; /* 21px */
     }
 
-    h2 {
+    h2, h3, .pano-title {
         font-size: 1.1875em; /* 19px */
     }
 
-    h3 {
+    h4 {
         font-size: 0.875em; /* 14px */
     }
 }
