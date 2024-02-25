@@ -1,13 +1,17 @@
 <script setup>
+// NEED TO ADD FUNCTIONALITY TO DISPLAY ERROR MESSAGES.
+// NEED TO ADD FUNCTIONALITY TO HIGHLIGHT SELECTED PARK <DD>.
 import { ref, watch } from "vue";
 import SearchBar from "./SearchBar.vue";
+import OverviewAbout from "./OverviewAbout.vue";
+import OverviewAlert from "./OverviewAlert.vue";
 import { parks } from "../data/parks-list.js";
+import { store } from "../store.js";
 
 const searchTerm = ref("");
 const selectedParks = ref([]);
 const parkForAlert = ref("");
 const parkAlerts = ref([]);
-// const badgeType = ref("");
 
 function runSearchTerm() {
     parks.map((park)=> {
@@ -16,10 +20,18 @@ function runSearchTerm() {
             console.log(selectedParks);
         }
     });
+    store.modifyOverviewAbout(false);
+    store.modifyOverviewAlert(false);
+    store.modifyListParks(true);
+    store.modifyListAlerts(false);
 }
 
 function clearSearchTerm() {
     searchTerm.value = "";
+    store.modifyOverviewAbout(true);
+    store.modifyOverviewAlert(true);
+    store.modifyListParks(false);
+    store.modifyListAlerts(false);
 }
 
 function clearSelectedParks() {
@@ -65,6 +77,10 @@ watch(parkForAlert, () => {
         });
 });
 
+watch(parkAlerts, () => {
+    store.modifyListAlerts(true);
+});
+
 </script>
 
 <template>
@@ -76,37 +92,56 @@ watch(parkForAlert, () => {
     />
 
     <section>
-        <dl>
-            <template v-for="ssp in selectedParks" :key="parks[ssp].parkCode">
-                <dd
-                    :id="parks[ssp].parkCode"
-                    @click="setparkForAlert($event.target.id)"
-                >
-                    {{ parks[ssp].fullName }}
-                </dd>
-            </template>
-        </dl>
+        <OverviewAbout />
+
+        <div
+            v-if="store.listParks"
+            class="list"
+        >
+        <div class="results-notice">
+            <p v-if="selectedParks.length === 0"><strong>No results for "{{ searchTerm }}."</strong></p>
+        </div>
+            <dl>
+                <template v-for="ssp in selectedParks" :key="parks[ssp].parkCode">
+                    <dd
+                        :id="parks[ssp].parkCode"
+                        @click="setparkForAlert($event.target.id)"
+                    >
+                        {{ parks[ssp].fullName }}
+                    </dd>
+                </template>
+            </dl>
+        </div>
     </section>
 
     <aside>
-        <!-- <pre>{{ parkAlerts }}</pre> -->
+        <OverviewAlert />
+
         <div
-            v-for="alert in parkAlerts.data"
-            class="alert"
-            :key="alert.id"
+            v-if="store.listAlerts"
+            class="list"
         >
-            <div class="alert-type">
-                <div
-                    :class="setBadgeType(alert.category)"
-                    class="badge"
-                >
-                    <h3>{{ alert.category }}</h3>
-                </div>
+            <div class="results-notice">
+                <p><strong>{{ parkAlerts.total }} alert<span v-if="parkAlerts.total !== '1'">s</span> for this park.</strong></p>
             </div>
-            <div class="alert-text">
-                <h2>{{ alert.title }}</h2>
-                <p>{{ alert.description }}</p>
-                <p>Issued on: {{ alert.lastIndexedDate }}</p>
+            <div
+                v-for="alert in parkAlerts.data"
+                class="alert"
+                :key="alert.id"
+            >
+                <div class="alert-type">
+                    <div
+                        :class="setBadgeType(alert.category)"
+                        class="badge"
+                    >
+                        <h4>{{ alert.category }}</h4>
+                    </div>
+                </div>
+                <div class="alert-text">
+                    <h3>{{ alert.title }}</h3>
+                    <p>{{ alert.description }}</p>
+                    <p>Issued on: {{ alert.lastIndexedDate }}</p>
+                </div>
             </div>
         </div>
     </aside>
