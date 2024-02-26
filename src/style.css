@@ -318,9 +318,9 @@ dl {
 
 dd {
     margin: 0 0 1em 0;
-    padding: 0;
+    padding: 0.5em 0;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    line-height: 2.2;
+    line-height: 1.5;
     font-weight: 400;
     color: #281900;
     background: #ede0eb; /* neutral 90 */
