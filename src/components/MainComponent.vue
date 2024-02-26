@@ -1,6 +1,5 @@
 <script setup>
 // NEED TO ADD FUNCTIONALITY TO DISPLAY ERROR MESSAGES.
-// NEED TO ADD FUNCTIONALITY TO HIGHLIGHT SELECTED PARK <DD>.
 import { ref, watch } from "vue";
 import SearchBar from "./SearchBar.vue";
 import OverviewAbout from "./OverviewAbout.vue";
@@ -56,6 +55,18 @@ function setBadgeType(x) {
     }
 }
 
+function highlightSelectedPark() {
+    const list = document.getElementById("list-of-parks");
+    const descs = list.querySelectorAll("dd");
+    descs.forEach(function(desc) {
+        if (desc.id === parkForAlert.value) {
+            desc.style.backgroundColor = "#d0c4bf"; // neutral 80
+        } else {
+            desc.style.backgroundColor = "#ede0eb"; // neutral 90
+        }
+    });
+}
+
 // DEVELOPING - REMEMBER CORS RESTRICTIONS IN BROWSER.
 watch(parkForAlert, () => {
 // Using locally -> http://localhost:4040/something
@@ -99,13 +110,16 @@ watch(parkAlerts, () => {
             class="list"
         >
         <div class="results-notice">
-            <p v-if="selectedParks.length === 0"><strong>No results for "{{ searchTerm }}."</strong></p>
+            <p v-if="selectedParks.length === 0"><strong>No results.</strong></p>
         </div>
-            <dl>
+            <dl id="list-of-parks">
                 <template v-for="ssp in selectedParks" :key="parks[ssp].parkCode">
                     <dd
                         :id="parks[ssp].parkCode"
-                        @click="setparkForAlert($event.target.id)"
+                        @click="[
+                            setparkForAlert($event.target.id),
+                            highlightSelectedPark()
+                        ]"
                     >
                         {{ parks[ssp].fullName }}
                     </dd>
@@ -122,7 +136,7 @@ watch(parkAlerts, () => {
             class="list"
         >
             <div class="results-notice">
-                <p><strong>{{ parkAlerts.total }} alert<span v-if="parkAlerts.total !== '1'">s</span> for this park.</strong></p>
+                <p><strong>Alert<span v-if="parkAlerts.total !== '1'">s</span>: {{ parkAlerts.total }}</strong></p>
             </div>
             <div
                 v-for="alert in parkAlerts.data"
