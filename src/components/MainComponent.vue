@@ -1,5 +1,4 @@
 <script setup>
-// NEED TO ADD FUNCTIONALITY TO DISPLAY ERROR MESSAGES.
 import { ref, watch } from "vue";
 import SearchBar from "./SearchBar.vue";
 import OverviewAbout from "./OverviewAbout.vue";
@@ -11,8 +10,10 @@ const searchTerm = ref("");
 const selectedParks = ref([]);
 const parkForAlert = ref("");
 const parkAlerts = ref([]);
+const errorMsg = ref("");
 
 function runSearchTerm() {
+    errorMsg.value = "";
     parks.map((park)=> {
         if (park.fullName.toLowerCase().includes(searchTerm.value.toLowerCase())) {
             selectedParks.value.push(parks.indexOf(park));
@@ -26,6 +27,7 @@ function runSearchTerm() {
 }
 
 function clearSearchTerm() {
+    errorMsg.value = "";
     searchTerm.value = "";
     store.modifyOverviewAbout(true);
     store.modifyOverviewAlert(true);
@@ -85,6 +87,7 @@ watch(parkForAlert, () => {
         })
         .catch((error) => {
             console.log(error);
+            errorMsg.value = error;
         });
 });
 
@@ -111,6 +114,7 @@ watch(parkAlerts, () => {
         >
         <div class="results-notice">
             <p v-if="selectedParks.length === 0"><strong>No results.</strong></p>
+            <p class="error-msg">{{ errorMsg }}</p>
         </div>
             <dl id="list-of-parks">
                 <template v-for="ssp in selectedParks" :key="parks[ssp].parkCode">
@@ -136,7 +140,8 @@ watch(parkAlerts, () => {
             class="list"
         >
             <div class="results-notice">
-                <p><strong>Alert<span v-if="parkAlerts.total !== '1'">s</span>: {{ parkAlerts.total }}</strong></p>
+                <p><strong>Alerts: {{ parkAlerts.total }}</strong></p>
+                <p>{{ errorMsg }}</p>
             </div>
             <div
                 v-for="alert in parkAlerts.data"
