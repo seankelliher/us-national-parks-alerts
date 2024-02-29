@@ -310,6 +310,10 @@ p {
     color: #201a18;
 }
 
+.error-msg {
+    color: #ba1a1a;
+}
+
 dl {
     width: 100%;
     margin: 1em 0;
