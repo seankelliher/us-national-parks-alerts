@@ -3,8 +3,10 @@
 
 <template>
     <div class="pano">
-        <figure class="full-width"> <!-- RESIZE IMAGE - CURRENTLY HUGE. -->
-            <img src="/gettysburg.jpg" alt="add description">
+        <figure class="full-width">
+            <img
+                src="/gettysburg-battlefield.jpg"
+                alt="First Day's Battlefield, Gettysburg. Photo: NPS/Mary O'Neill.">
         </figure>
         <div class="pano-title">Park Alerts</div>
     </div>
