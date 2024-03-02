@@ -7,41 +7,47 @@ import { parks } from "../data/parks-list.js";
 import { store } from "../store.js";
 
 const searchTerm = ref("");
+const previous = ref("");
 const selectedParks = ref([]);
 const parkForAlert = ref("");
 const parkAlerts = ref([]);
 const errorMsg = ref("");
 
 function runSearchTerm() {
-    errorMsg.value = "";
     if (searchTerm.value === "") {
         errorMsg.value = "Please enter a search term.";
+    } else if (previous.value === searchTerm.value) {
+        errorMsg.value = "You entered the same search term. Please clear and try again.";
     } else {
+        errorMsg.value = "";
+        selectedParks.value.length = 0;
         parks.map((park)=> {
             if (park.fullName.toLowerCase().includes(searchTerm.value.toLowerCase())) {
                 selectedParks.value.push(parks.indexOf(park));
             } else if (park.altName.toLowerCase().includes(searchTerm.value.toLowerCase())) {
                 selectedParks.value.push(parks.indexOf(park));
             }
-        }); 
+        });
+        store.displayOverviewAbout(false);
+        store.displayOverviewAlert(false);
+        store.displayListParks(true);
+        store.displayListAlerts(false);
     }
-    store.displayOverviewAbout(false);
-    store.displayOverviewAlert(false);
-    store.displayListParks(true);
-    store.displayListAlerts(false);
+    previous.value = searchTerm.value;
 }
 
 function clearSearchTerm() {
     errorMsg.value = "";
     searchTerm.value = "";
+    parkForAlert.value = ""; // Allows alerts if user clears & repeats same search & click.
     store.displayOverviewAbout(true);
     store.displayOverviewAlert(true);
     store.displayListParks(false);
     store.displayListAlerts(false);
 }
 
-function clearSelectedParks() {
-    selectedParks.value.length = 0;
+function clearErrorMsg() {
+    errorMsg.value = "";
 }
 
 function setparkForAlert(pk) {
@@ -110,7 +116,6 @@ watch(parkAlerts, () => {
         v-model:searchTerm="searchTerm"
         @run-search-term="runSearchTerm"
         @clear-search-term="clearSearchTerm"
-        @clear-selected-parks="clearSelectedParks"
     />
 
     <section>
@@ -130,7 +135,8 @@ watch(parkAlerts, () => {
                         :id="parks[sp].parkCode"
                         @click="[
                             setparkForAlert($event.target.id),
-                            highlightSelectedPark()
+                            highlightSelectedPark(),
+                            clearErrorMsg()
                         ]"
                     >
                         {{ parks[sp].fullName }}
@@ -149,7 +155,6 @@ watch(parkAlerts, () => {
         >
             <div class="results-notice">
                 <p>Alerts: {{ parkAlerts.total }}</p>
-                <p>{{ errorMsg }}</p>
             </div>
             <div
                 v-for="alert in parkAlerts.data"
