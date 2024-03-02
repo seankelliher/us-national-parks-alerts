@@ -1,14 +1,7 @@
 <script setup>
-//import { store } from "../store.js";
-//const searchTerm = defineModel(store.searchTerm);
-
-// SEE THIS PAGE - https://vuejs.org/guide/essentials/forms.html
-// EXPLAINS BINDING SIMPLY.
-// https://vuejs.org/guide/components/v-model.html#component-v-model
 const searchTerm = defineModel("searchTerm");
 
 defineEmits(["runSearchTerm", "clearSearchTerm", "clearSelectedParks"]);
-
 </script>
 
 <template>

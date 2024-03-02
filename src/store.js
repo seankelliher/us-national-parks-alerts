@@ -5,16 +5,16 @@ export const store = reactive({
     overviewAlert: true,
     listParks: false,
     listAlerts: false,
-    modifyOverviewAbout(x) {
-        store.overviewAbout = x;
+    displayOverviewAbout(tf) {
+        store.overviewAbout = tf;
     },
-    modifyOverviewAlert(x) {
-        store.overviewAlert = x;
+    displayOverviewAlert(tf) {
+        store.overviewAlert = tf;
     },
-    modifyListParks(x) {
-        store.listParks = x;
+    displayListParks(tf) {
+        store.listParks = tf;
     },
-    modifyListAlerts(x) {
-        store.listAlerts = x;
+    displayListAlerts(tf) {
+        store.listAlerts = tf;
     }
 });

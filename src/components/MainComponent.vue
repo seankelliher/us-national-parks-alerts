@@ -20,44 +20,42 @@ function runSearchTerm() {
         parks.map((park)=> {
             if (park.fullName.toLowerCase().includes(searchTerm.value.toLowerCase())) {
                 selectedParks.value.push(parks.indexOf(park));
-                console.log(selectedParks);
             } else if (park.altName.toLowerCase().includes(searchTerm.value.toLowerCase())) {
                 selectedParks.value.push(parks.indexOf(park));
-                console.log(selectedParks);
             }
         }); 
     }
-    store.modifyOverviewAbout(false);
-    store.modifyOverviewAlert(false);
-    store.modifyListParks(true);
-    store.modifyListAlerts(false);
+    store.displayOverviewAbout(false);
+    store.displayOverviewAlert(false);
+    store.displayListParks(true);
+    store.displayListAlerts(false);
 }
 
 function clearSearchTerm() {
     errorMsg.value = "";
     searchTerm.value = "";
-    store.modifyOverviewAbout(true);
-    store.modifyOverviewAlert(true);
-    store.modifyListParks(false);
-    store.modifyListAlerts(false);
+    store.displayOverviewAbout(true);
+    store.displayOverviewAlert(true);
+    store.displayListParks(false);
+    store.displayListAlerts(false);
 }
 
 function clearSelectedParks() {
     selectedParks.value.length = 0;
 }
 
-function setparkForAlert(x) {
-    parkForAlert.value = x;
+function setparkForAlert(pk) {
+    parkForAlert.value = pk;
 }
 
-function setBadgeType(x) {
-    if (x === "Park Closure") {
+function setBadgeType(bdg) {
+    if (bdg === "Park Closure") {
         return "closure";
-    } else if (x === "Information") {
+    } else if (bdg === "Information") {
         return "info";
-    } else if (x === "Caution") {
+    } else if (bdg === "Caution") {
         return "caution";
-    } else if (x === "Danger") {
+    } else if (bdg === "Danger") {
         return "danger";
     } else {
         return "general";
@@ -76,12 +74,11 @@ function highlightSelectedPark() {
     });
 }
 
-function formatDate(x) {
-    const date = new Date(x);
+function formatDate(dt) {
+    const date = new Date(dt);
     return date.toDateString();
 }
 
-// DEVELOPING - REMEMBER CORS RESTRICTIONS IN BROWSER.
 watch(parkForAlert, () => {
 // Using locally -> http://localhost:4040/something
 // Using remotely -> /something
@@ -104,9 +101,8 @@ watch(parkForAlert, () => {
 });
 
 watch(parkAlerts, () => {
-    store.modifyListAlerts(true);
+    store.displayListAlerts(true);
 });
-
 </script>
 
 <template>
@@ -129,15 +125,15 @@ watch(parkAlerts, () => {
             <p class="error-msg">{{ errorMsg }}</p>
         </div>
             <dl id="list-of-parks">
-                <template v-for="ssp in selectedParks" :key="parks[ssp].parkCode">
+                <template v-for="sp in selectedParks" :key="parks[sp].parkCode">
                     <dd
-                        :id="parks[ssp].parkCode"
+                        :id="parks[sp].parkCode"
                         @click="[
                             setparkForAlert($event.target.id),
                             highlightSelectedPark()
                         ]"
                     >
-                        {{ parks[ssp].fullName }}
+                        {{ parks[sp].fullName }}
                     </dd>
                 </template>
             </dl>

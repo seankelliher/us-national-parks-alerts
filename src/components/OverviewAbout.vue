@@ -1,10 +1,4 @@
 <script setup>
-/*defineProps({
-    selectedParks: {
-        type: Number,
-        required: true
-    }
-});*/
 import { store } from "../store.js";
 </script>
 
