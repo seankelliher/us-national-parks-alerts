@@ -14,15 +14,19 @@ const errorMsg = ref("");
 
 function runSearchTerm() {
     errorMsg.value = "";
-    parks.map((park)=> {
-        if (park.fullName.toLowerCase().includes(searchTerm.value.toLowerCase())) {
-            selectedParks.value.push(parks.indexOf(park));
-            console.log(selectedParks);
-        } else if (park.altName.toLowerCase().includes(searchTerm.value.toLowerCase())) {
-            selectedParks.value.push(parks.indexOf(park));
-            console.log(selectedParks);
-        }
-    });
+    if (searchTerm.value === "") {
+        errorMsg.value = "Please enter a search term.";
+    } else {
+        parks.map((park)=> {
+            if (park.fullName.toLowerCase().includes(searchTerm.value.toLowerCase())) {
+                selectedParks.value.push(parks.indexOf(park));
+                console.log(selectedParks);
+            } else if (park.altName.toLowerCase().includes(searchTerm.value.toLowerCase())) {
+                selectedParks.value.push(parks.indexOf(park));
+                console.log(selectedParks);
+            }
+        }); 
+    }
     store.modifyOverviewAbout(false);
     store.modifyOverviewAlert(false);
     store.modifyListParks(true);
@@ -121,7 +125,7 @@ watch(parkAlerts, () => {
             class="list"
         >
         <div class="results-notice">
-            <p v-if="selectedParks.length === 0"><strong>No results.</strong></p>
+            <p v-if="selectedParks.length === 0 && searchTerm !== ''">No results.</p>
             <p class="error-msg">{{ errorMsg }}</p>
         </div>
             <dl id="list-of-parks">
@@ -148,7 +152,7 @@ watch(parkAlerts, () => {
             class="list"
         >
             <div class="results-notice">
-                <p><strong>Alerts: {{ parkAlerts.total }}</strong></p>
+                <p>Alerts: {{ parkAlerts.total }}</p>
                 <p>{{ errorMsg }}</p>
             </div>
             <div
