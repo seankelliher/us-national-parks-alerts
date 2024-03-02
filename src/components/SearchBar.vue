@@ -1,7 +1,7 @@
 <script setup>
 const searchTerm = defineModel("searchTerm");
 
-defineEmits(["runSearchTerm", "clearSearchTerm", "clearSelectedParks"]);
+defineEmits(["runSearchTerm", "clearSearchTerm"]);
 </script>
 
 <template>
@@ -15,10 +15,7 @@ defineEmits(["runSearchTerm", "clearSearchTerm", "clearSelectedParks"]);
         >
         <button
             type="submit"
-            @click="[
-                $emit('clearSelectedParks'),
-                $emit('runSearchTerm', searchTerm)
-            ]"
+            @click="$emit('runSearchTerm', searchTerm)"
             class="btn-go"
         >
             Go
