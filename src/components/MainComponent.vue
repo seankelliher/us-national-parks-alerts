@@ -18,6 +18,9 @@ function runSearchTerm() {
         if (park.fullName.toLowerCase().includes(searchTerm.value.toLowerCase())) {
             selectedParks.value.push(parks.indexOf(park));
             console.log(selectedParks);
+        } else if (park.altName.toLowerCase().includes(searchTerm.value.toLowerCase())) {
+            selectedParks.value.push(parks.indexOf(park));
+            console.log(selectedParks);
         }
     });
     store.modifyOverviewAbout(false);
@@ -67,6 +70,11 @@ function highlightSelectedPark() {
             desc.style.backgroundColor = "#ede0eb"; // neutral 90
         }
     });
+}
+
+function formatDate(x) {
+    const date = new Date(x);
+    return date.toDateString();
 }
 
 // DEVELOPING - REMEMBER CORS RESTRICTIONS IN BROWSER.
@@ -159,7 +167,7 @@ watch(parkAlerts, () => {
                 <div class="alert-text">
                     <h3>{{ alert.title }}</h3>
                     <p>{{ alert.description }}</p>
-                    <p>Issued on: {{ alert.lastIndexedDate }}</p>
+                    <p>Issued on: {{ formatDate(alert.lastIndexedDate) }}</p>
                 </div>
             </div>
         </div>
