@@ -226,6 +226,10 @@ button {
     }
 }
 
+button:hover {
+    cursor: pointer;
+}
+
 .btn-go {
     border: 1px solid #9cd76e;
     background: #9cd76e;
