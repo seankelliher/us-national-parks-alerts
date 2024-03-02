@@ -13,7 +13,7 @@ TESTING. Project is mostly complete. I am testing for bugs, accessibility, and b
 ![screen shot of project](/screenshots/us-national-parks-alerts-screenshot1.png?s=600)
 
 * Alerts for National Park of America Samoa.
-![screen shot of project](/screenshots/us-national-parks-alerts-screenshot1.png?s=600)
+![screen shot of project](/screenshots/us-national-parks-alerts-screenshot2.png?s=600)
 
 ## Installation and Setup Instructions
 
