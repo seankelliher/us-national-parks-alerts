@@ -1,15 +1,19 @@
 [![MIT License on GitHub](https://img.shields.io/github/license/seankelliher/us-national-parks-alerts?style=flat-square)](/LICENSE.txt)
 ## US National Parks Alerts
 
-IN DEVELOPMENT. Alerts on closures, warnings, and dangers at US National Parks, built with Vue.js and Express.js.
+Alerts on closures, warnings, and dangers at US National Parks, built with Vue.js and Express.js.
 
 ## Project Status
 
-IN DEVELOPMENT. Nothing to see yet.
+TESTING. Project is mostly complete. I am testing for bugs, accessibility, and browser compatibility.
 
 ## Project Screen Shots
 
-* Screen shots to come.
+* Starting view.
+![screen shot of project](/screenshots/us-national-parks-alerts-screenshot1.png?s=600)
+
+* Alerts for National Park of America Samoa.
+![screen shot of project](/screenshots/us-national-parks-alerts-screenshot1.png?s=600)
 
 ## Installation and Setup Instructions
 
@@ -33,7 +37,13 @@ Visit the localhost port displayed in the terminal after running `npm run dev`. 
 
 ## Reflection
 
-Reflection to come.
+My goal was to build an application that offers alerts for the (currently) 471 parks managed by the US National Park Service (NPS). If you were visiting a park, it would be a central asset to find what closures, warnings, and dangers are awaiting you.
+
+Due to rate limiting, it was not practical to use NPS’s API to gather the names of all parks. I built a list and stored it locally, along with multiple searchable names for some parks - for example, park names with and without accent marks; World War II and World War Two; with and without someone’s middle initial.
+
+For process - the user inputs a park name or part of a park name into a search bar; the application returns the matching results. From here, the user chooses the parks he/she wants and the application uses NPS’s API to fetch current alerts for the park.
+
+There were several challenges. I wanted to emulate the style of the real NPS website so I studied it and made my design accordingly. Error handling was also challenging. I wanted to ensure users received an error message if the fetch didn’t work properly. I was also concerned about user behavior. I ran searches over and over to locate problems with both expected and odd user behavior and developed error handling to address them. For example, initially I was getting some errors and non-responsive buttons if users ran the same search repeatedly.
 
 ## Acknowledgments
 
@@ -41,4 +51,5 @@ Reflection to come.
 * Readme guidance from [Brenna Martenson](https://gist.github.com/martensonbj/6bf2ec2ed55f5be723415ea73c4557c4).
 * Design guidance from Google's [Material Design](https://material.io/design).
 * Linting guidance from [ESLint](https://eslint.org) and [Stylelint](https://stylelint.io).
+* Accessibility guidance form Firefox's Developer Tools.
 * Shields from [Shields](https://shields.io).
