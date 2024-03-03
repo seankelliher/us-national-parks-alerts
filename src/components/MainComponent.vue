@@ -133,7 +133,13 @@ watch(parkAlerts, () => {
                 <template v-for="sp in selectedParks" :key="parks[sp].parkCode">
                     <dd
                         :id="parks[sp].parkCode"
+                        tabindex="0"
                         @click="[
+                            setparkForAlert($event.target.id),
+                            highlightSelectedPark(),
+                            clearErrorMsg()
+                        ]"
+                        @keyup.enter="[
                             setparkForAlert($event.target.id),
                             highlightSelectedPark(),
                             clearErrorMsg()
