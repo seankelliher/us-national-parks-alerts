@@ -41,7 +41,7 @@ My goal was to build an application that offers alerts for the (currently) 471 p
 
 Due to rate limiting, it was not practical to use NPS’s API to gather the names of all parks. I built a list and stored it locally, along with multiple searchable names for some parks - for example, park names with and without accent marks; World War II and World War Two; with and without someone’s middle initial.
 
-For process - the user inputs a park name or part of a park name into a search bar; the application returns the matching results. From here, the user chooses the parks he/she wants and the application uses NPS’s API to fetch current alerts for the park.
+For process - the user inputs a park name or part of a park name into a search bar; the application returns the matching results. From here, the user chooses the desired park; the application adds the park's ID to front-end's request URL; passes it to the back-end's request URL; the back-end fetches the alerts using NPS’s API; and passes the results to the front-end to be displayed.
 
 There were several challenges. I wanted to emulate the style of the real NPS website so I studied it and made my design accordingly. Error handling was also challenging. I wanted to ensure users received an error message if the fetch didn’t work properly. I was also concerned about user behavior. I ran searches over and over to locate problems with both expected and odd user behavior and developed error handling to address them. For example, initially I was getting some errors and non-responsive buttons if users ran the same search repeatedly.
 
@@ -52,4 +52,5 @@ There were several challenges. I wanted to emulate the style of the real NPS web
 * Design guidance from Google's [Material Design](https://material.io/design).
 * Linting guidance from [ESLint](https://eslint.org) and [Stylelint](https://stylelint.io).
 * Accessibility guidance form Firefox's Developer Tools.
+* Helpful post on passing variables between Vue and Express [Stackoverflow](https://stackoverflow.com/questions/72233660/pass-variables-from-front-to-backend).
 * Shields from [Shields](https://shields.io).
