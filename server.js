@@ -36,7 +36,7 @@ app.use(express.static(__dirname + "/dist/"));
 // ========================
 
 // Access token, using environmental variables.
-const token = process.env.NPS_KEY;
+const token = process.env.APP_TOKEN;
 
 // Route route with error handling.
 app.get("/alerts/:id", (req, res) => {
