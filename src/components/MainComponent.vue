@@ -88,7 +88,7 @@ function formatDate(dt) {
 watch(parkForAlert, () => {
 // Using locally -> http://localhost:4040/something
 // Using remotely -> /something
-    fetch(`/${parkForAlert.value}`)
+    fetch(`/alerts/${parkForAlert.value}`)
         .then((response) => {
             if (response.ok) {
                 return response.json();
