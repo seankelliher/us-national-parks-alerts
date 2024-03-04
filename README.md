@@ -1,7 +1,7 @@
 [![MIT License on GitHub](https://img.shields.io/github/license/seankelliher/us-national-parks-alerts?style=flat-square)](/LICENSE.txt)
 ## US National Parks Alerts
 
-Alerts on closures, warnings, and dangers at US National Parks, built with Vue.js and Express.js.
+Alerts on closures, warnings, and dangers at US National Parks, built with Vue.js and Express.js. [View working component](https://us-national-parks-alerts-fa601db96052.herokuapp.com). **"Eco" dyno, takes a few seconds to wake up.** 
 
 ## Project Status
 
