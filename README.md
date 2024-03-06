@@ -5,7 +5,7 @@ Alerts on closures, warnings, and dangers at US National Parks, built with Vue.j
 
 ## Project Status
 
-TESTING. Project is mostly complete. I am testing for bugs, accessibility, and browser compatibility.
+Next steps, I want to do more extensive accessibility and browser testing.
 
 ## Project Screen Shots
 
@@ -39,7 +39,7 @@ Visit the localhost port displayed in the terminal after running `npm run dev`. 
 
 My goal was to build an application that offers alerts for the (currently) 471 parks managed by the US National Park Service (NPS). If you were visiting a park, it would be a central asset to find what closures, warnings, and dangers are awaiting you.
 
-Due to rate limiting, it was not practical to use NPS’s API to gather the names of all parks. I built a list and stored it locally, along with multiple searchable names for some parks - for example, park names with and without accent marks; World War II and World War Two; with and without someone’s middle initial.
+Due to rate limiting, it was not practical to use NPS’s API to gather the names of all parks. I built a list of parks and stored it locally, along with multiple searchable names for some parks. For example, I created park names with and without accent marks; World War II and World War Two; with and without someone’s middle initial.
 
 For process - the user inputs a park name or part of a park name into a search bar; the application returns the matching results. From here, the user chooses the desired park; the application adds the park's ID to front-end's request URL; passes it to the back-end's request URL; the back-end fetches the alerts using NPS’s API; and passes the results to the front-end to be displayed.
 
