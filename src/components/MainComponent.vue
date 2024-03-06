@@ -7,19 +7,18 @@ import { parks } from "../data/parks-list.js";
 import { store } from "../store.js";
 
 const searchTerm = ref("");
-const previous = ref("");
 const selectedParks = ref([]);
 const parkForAlert = ref("");
+const parkForAlertFullName = ref("");
 const parkAlerts = ref([]);
 const errorMsg = ref("");
 
 function runSearchTerm() {
     if (searchTerm.value === "") {
         errorMsg.value = "Please enter a search term.";
-    } else if (previous.value === searchTerm.value) {
-        errorMsg.value = "You entered the same search term. Please clear and try again.";
     } else {
         errorMsg.value = "";
+        parkForAlert.value = ""; // Allows alerts if user runs search & clicks park, then runs search and clicks same park again - back to back.
         selectedParks.value.length = 0;
         parks.map((park)=> {
             if (park.fullName.toLowerCase().includes(searchTerm.value.toLowerCase())) {
@@ -33,13 +32,12 @@ function runSearchTerm() {
         store.displayListParks(true);
         store.displayListAlerts(false);
     }
-    previous.value = searchTerm.value;
 }
 
 function clearSearchTerm() {
     errorMsg.value = "";
     searchTerm.value = "";
-    parkForAlert.value = ""; // Allows alerts if user clears & repeats same search & click.
+    parkForAlert.value = ""; // Same as above.
     store.displayOverviewAbout(true);
     store.displayOverviewAlert(true);
     store.displayListParks(false);
@@ -50,7 +48,7 @@ function clearErrorMsg() {
     errorMsg.value = "";
 }
 
-function setparkForAlert(pk) {
+function setParkForAlert(pk) {
     parkForAlert.value = pk;
 }
 
@@ -68,16 +66,10 @@ function setBadgeType(bdg) {
     }
 }
 
-function highlightSelectedPark() {
-    const list = document.getElementById("list-of-parks");
-    const descs = list.querySelectorAll("dd");
-    descs.forEach(function(desc) {
-        if (desc.id === parkForAlert.value) {
-            desc.style.backgroundColor = "#d0c4bf"; // neutral 80
-        } else {
-            desc.style.backgroundColor = "#ede0eb"; // neutral 90
-        }
-    });
+function setParkForAlertFullName(sp) {
+    const selected = document.getElementById(sp);
+    const text = selected.textContent;
+    parkForAlertFullName.value = text;
 }
 
 function formatDate(dt) {
@@ -85,25 +77,27 @@ function formatDate(dt) {
     return date.toDateString();
 }
 
-watch(parkForAlert, () => {
-// Using locally -> http://localhost:4040/something
-// Using remotely -> /something
-    fetch(`/alerts/${parkForAlert.value}`)
-        .then((response) => {
-            if (response.ok) {
-                return response.json();
-            } else {
-                return Promise.reject(`Error: ${response.status}. Please try again later.`);
-            }
-        })
-        .then((data) => {
-            console.log(data);
-            parkAlerts.value = data;
-        })
-        .catch((error) => {
-            console.log(error);
-            errorMsg.value = error;
-        });
+watch(parkForAlert, (newValue) => {
+    if (newValue !== "") {
+        // Using locally -> http://localhost:4040/something
+        // Using remotely -> /something
+        fetch(`/alerts/${parkForAlert.value}`)
+            .then((response) => {
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    return Promise.reject(`Error: ${response.status}. Please try again later.`);
+                }
+            })
+            .then((data) => {
+                console.log(data);
+                parkAlerts.value = data;
+            })
+            .catch((error) => {
+                console.log(error);
+                errorMsg.value = error;
+            });
+    }
 });
 
 watch(parkAlerts, () => {
@@ -135,13 +129,13 @@ watch(parkAlerts, () => {
                         :id="parks[sp].parkCode"
                         tabindex="0"
                         @click="[
-                            setparkForAlert($event.target.id),
-                            highlightSelectedPark(),
+                            setParkForAlert($event.target.id),
+                            setParkForAlertFullName($event.target.id),
                             clearErrorMsg()
                         ]"
                         @keyup.enter="[
-                            setparkForAlert($event.target.id),
-                            highlightSelectedPark(),
+                            setParkForAlert($event.target.id),
+                            setParkForAlertFullName($event.target.id),
                             clearErrorMsg()
                         ]"
                     >
@@ -160,7 +154,7 @@ watch(parkAlerts, () => {
             class="list"
         >
             <div class="results-notice">
-                <p>Alerts: {{ parkAlerts.total }}</p>
+                <p>Alerts: {{ parkAlerts.total }} for {{ parkForAlertFullName }}</p>
             </div>
             <div
                 v-for="alert in parkAlerts.data"
