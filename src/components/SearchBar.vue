@@ -21,7 +21,6 @@ defineEmits(["runSearchTerm", "clearSearchTerm"]);
             Go
         </button>
         <button
-            type="clear"
             @click="$emit('clearSearchTerm')"
             class="btn-clear"
         >
