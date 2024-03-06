@@ -1,0 +1,89 @@
+-------------------------
+STATES AND TERRITORIES
+-------------------------
+
+AL|Alabama
+AK|Alaska
+AZ|Arizona
+AR|Arkansas
+CA|California
+CO|Colorado
+CT|Connecticut
+DE|Delaware
+FL|Florida
+GA|Georgia
+HI|Hawaii
+ID|Idaho
+IL|Illinois
+IN|Indiana
+IA|Iowa
+KS|Kansas
+KY|Kentucky
+LA|Louisiana
+ME|Maine
+MD|Maryland
+MA|Massachusetts
+MI|Michigan
+MN|Minnesota
+MS|Mississippi
+MO|Missouri
+MT|Montana
+NE|Nebraska
+NV|Nevada
+NH|New Hampshire
+NJ|New Jersey
+NM|New Mexico
+NY|New York
+NC|North Carolina
+ND|North Dakota
+OH|Ohio
+OK|Oklahoma
+OR|Oregon
+PA|Pennsylvania
+RI|Rhode Island
+SC|South Carolina
+SD|South Dakota
+TN|Tennessee
+TX|Texas
+UT|Utah
+VT|Vermont
+VA|Virginia
+WA|Washington
+WV|West Virginia
+WI|Wisconsin
+WY|Wyoming
+DC|District of Columbia
+AS|American Samoa
+GU|Guam
+MP|Northern Mariana Islands
+PR|Puerto Rico
+UM|United States Minor Outlying Islands
+VI|Virgin Islands, U.S.
+
+-------------------------
+PANORAMA PHOTOS
+-------------------------
+
+https://www.nps.gov/media/photo/view.htm?id=75BFBBD4-1DD8-B71C-0773-19CC413F4ACD
+
+https://www.nps.gov/media/photo/view.htm?id=F27E7755-447A-41D9-AC4A-D5DDFBAA4BE4 - Gettysburg
+
+https://www.nps.gov/media/photo/view.htm?id=1E66E317-BCB5-46DE-9296-865A1A2ABFAC
+
+https://www.nps.gov/media/photo/view.htm?id=212BE54C-B3ED-469D-90CE-AD4476F7C2BD
+
+https://www.nps.gov/media/photo/gallery-item.htm?pg=0&id=5b413946-3d55-4fb7-bbe2-50195e326031&gid=7E60503F-4AC6-4DB9-84EC-DAAA393AF379
+
+-------------------------
+ALERT CATEGORIES
+-------------------------
+
+Park Closure - #8b8559 (green)
+
+Information - #0083ae (blue)
+
+Caution - #fd7c00 (orange)
+
+Danger - #d71922 (red)
+
+General - #d7c2b9 (tan)
