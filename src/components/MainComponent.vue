@@ -128,6 +128,7 @@ watch(parkAlerts, () => {
                     <dd
                         :id="parks[sp].parkCode"
                         tabindex="0"
+                        role="button"
                         @click="[
                             setParkForAlert($event.target.id),
                             setParkForAlertFullName($event.target.id),
