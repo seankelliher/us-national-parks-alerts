@@ -99,7 +99,7 @@ figure.full-width {
 form {
     width: 90%;
     margin: 0;
-    padding: 0.5em 5% 1em; /* Longhand 0.5em 5% 1em 5% */
+    padding: 0.5em 5% 1em; /* longhand 0.5em 5% 1em 5% */
     background: #000;
     flex: initial;
     display: flex;
@@ -231,15 +231,25 @@ button:hover {
 }
 
 .btn-go {
-    border: 1px solid #9cd76e;
-    background: #9cd76e;
+    border: 1px solid #9cd67e; /* secondary 80 */
+    background: #9cd67e; /* secondary 80 */
     color: #000;
+}
+
+.btn-go:hover {
+    background: #81ba66; /* secondary 70 */
+    border: 1px solid #81ba66; /* secondary 70 */
 }
 
 .btn-clear {
     border: 1px solid #fff;
     background: #000;
     color: #fff;
+}
+
+.btn-clear:hover {
+    border: 1px solid #ede0db; /* neutral 90 */
+    color: #ede0db; /* neutral 90 */
 }
 
 section {
@@ -250,7 +260,7 @@ section {
 @media (min-width: 300px) and (max-width: 799px) {
     section {
         width: 90%;
-        padding: 1em 5% 0; /* Longhand 1em 5% 0 5% */
+        padding: 1em 5% 0; /* longhand 1em 5% 0 5% */
     }
 }
 
@@ -518,7 +528,7 @@ dl {
 }
 
 dd {
-    margin: 0 0 1em; /* Longhand 0 0 1em 0 */
+    margin: 0 0 1em; /* longhand 0 0 1em 0 */
     padding: 0.5em 0;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     line-height: 1.5;
