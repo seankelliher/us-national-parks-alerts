@@ -81,7 +81,7 @@ watch(parkForAlert, (newValue) => {
     if (newValue !== "") {
         // Using locally -> http://localhost:4040/alerts
         // Using remotely -> /alerts
-        fetch(`http://localhost:4040/alerts/${parkForAlert.value}`)
+        fetch(`/alerts/${parkForAlert.value}`)
             .then((response) => {
                 if (response.ok) {
                     return response.json();
