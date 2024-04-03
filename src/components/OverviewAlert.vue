@@ -13,22 +13,22 @@ import { store } from "../store.js";
         </div>
         <div class="alert-type">
             <div class="badge-big info">
-                <h4>Information</h4>
+                <h3>Information</h3>
             </div>
         </div>
         <div class="alert-type">
             <div class="badge-big closure">
-                <h4>Park Closure</h4>
+                <h3>Park Closure</h3>
             </div>
         </div>
         <div class="alert-type">
             <div class="badge-big caution">
-                <h4>Caution</h4>
+                <h3>Caution</h3>
             </div>
         </div>
         <div class="alert-type">
             <div class="badge-big danger">
-                <h4>Danger</h4>
+                <h3>Danger</h3>
             </div>
         </div>
     </div>

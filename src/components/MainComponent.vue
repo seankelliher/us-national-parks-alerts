@@ -79,9 +79,9 @@ function formatDate(dt) {
 
 watch(parkForAlert, (newValue) => {
     if (newValue !== "") {
-        // Using locally -> http://localhost:4040/something
-        // Using remotely -> /something
-        fetch(`/alerts/${parkForAlert.value}`)
+        // Using locally -> http://localhost:4040/alerts
+        // Using remotely -> /alerts
+        fetch(`http://localhost:4040/alerts/${parkForAlert.value}`)
             .then((response) => {
                 if (response.ok) {
                     return response.json();
@@ -167,11 +167,11 @@ watch(parkAlerts, () => {
                         :class="setBadgeType(alert.category)"
                         class="badge"
                     >
-                        <h4>{{ alert.category }}</h4>
+                        <h3>{{ alert.category }}</h3>
                     </div>
                 </div>
                 <div class="alert-text">
-                    <h3>{{ alert.title }}</h3>
+                    <h4>{{ alert.title }}</h4>
                     <p>{{ alert.description }}</p>
                     <p>Issued on: {{ formatDate(alert.lastIndexedDate) }}</p>
                 </div>
