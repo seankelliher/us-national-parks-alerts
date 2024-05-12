@@ -39,19 +39,10 @@ header::before {
     position: absolute;
     top: 0;
     bottom: 0;
+    right: calc((100vw - 100%) / -2);
+    left: calc((100vw - 100%) / -2);
     background: #000;
-    width: 2000px;
-    left: 100%;
-}
-
-header::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    background: #000;
-    width: 2000px;
-    right: 100%;
+    z-index: -1;
 }
 
 .pano {
@@ -126,19 +117,10 @@ form::before {
     position: absolute;
     top: 0;
     bottom: 0;
+    right: calc((100vw - 100%) / -2);
+    left: calc((100vw - 100%) / -2);
     background: #000;
-    width: 2000px;
-    left: 100%;
-}
-
-form::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    background: #000;
-    width: 2000px;
-    right: 100%;
+    z-index: -1;
 }
 
 input {
