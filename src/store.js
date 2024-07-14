@@ -1,15 +1,11 @@
 import { reactive } from "vue";
 
 export const store = reactive({
-    overviewAbout: true,
-    overviewAlert: true,
+    overviewBoxes: true,
     listParks: false,
     listAlerts: false,
-    displayOverviewAbout(tf) {
-        store.overviewAbout = tf;
-    },
-    displayOverviewAlert(tf) {
-        store.overviewAlert = tf;
+    displayOverviewBoxes(tf) {
+        store.overviewBoxes = tf;
     },
     displayListParks(tf) {
         store.listParks = tf;
