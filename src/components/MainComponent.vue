@@ -1,8 +1,6 @@
 <script setup>
 import { ref, watch } from "vue";
 import SearchBar from "./SearchBar.vue";
-import OverviewAbout from "./OverviewAbout.vue";
-import OverviewAlert from "./OverviewAlert.vue";
 import { parks } from "../data/parks-list.js";
 import { store } from "../store.js";
 
@@ -27,8 +25,7 @@ function runSearchTerm() {
                 selectedParks.value.push(parks.indexOf(park));
             }
         });
-        store.displayOverviewAbout(false);
-        store.displayOverviewAlert(false);
+        store.displayOverviewBoxes(false);
         store.displayListParks(true);
         store.displayListAlerts(false);
     }
@@ -38,8 +35,7 @@ function clearSearchTerm() {
     errorMsg.value = "";
     searchTerm.value = "";
     parkForAlert.value = ""; // Same as above.
-    store.displayOverviewAbout(true);
-    store.displayOverviewAlert(true);
+    store.displayOverviewBoxes(true);
     store.displayListParks(false);
     store.displayListAlerts(false);
 }
@@ -113,8 +109,6 @@ watch(parkAlerts, () => {
     />
 
     <section>
-        <OverviewAbout />
-
         <div
             v-if="store.listParks"
             class="list"
@@ -148,8 +142,6 @@ watch(parkAlerts, () => {
     </section>
 
     <aside>
-        <OverviewAlert />
-
         <div
             v-if="store.listAlerts"
             class="list"
