@@ -1,7 +1,6 @@
 /* Stylesheet uses Level 3 Media Queries. Level 4 coverage still spotty. */
 body {
     margin-top: 0;
-    background: #fffbff;
 }
 
 img { 
@@ -25,7 +24,7 @@ header {
     width: 90%;
     margin: 0;
     padding: 0.25em 5%;
-    background: #000;
+    background: #313128; /* N-20 */
     flex: initial;
     display: flex;
     flex-flow: row wrap;
@@ -37,11 +36,8 @@ header {
 header::before {
     content: "";
     position: absolute;
-    top: 0;
-    bottom: 0;
-    right: calc((100vw - 100%) / -2);
-    left: calc((100vw - 100%) / -2);
-    background: #000;
+    inset: 0 calc((100vw - 100%) / -2) 0 calc((100vw - 100%) / -2); /* shorthand top, right, bottom, left */
+    background: #313128; /* N-20 */
     z-index: -1;
 }
 
@@ -55,15 +51,17 @@ header::before {
 
 .pano-title {
     margin: 0;
-    padding: 0 1.5em;
+    padding: 0 0.75em;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    line-height: 2.5;
+    line-height: 1.8;
     font-weight: 500;
-    color: #fff;
+    color: #f4f1e3; /* N-95 */
+    background: #313128; /* N-20 */
+    background: rgb(49 49 40 / 80%); /* N-20 */
+    border: 1px solid #f4f1e3; /* N-95 */
     position: absolute;
     right: 5%;
-    bottom: 0.75em;
-    background: rgba(0 0 0 / 60%);
+    top: 0.75em;
 }
 
 figure {
@@ -84,111 +82,54 @@ figure.full-width {
     right: 50%;
     margin-left: -50vw;
     margin-right: -50vw;
-    background: #000; /* needed to fill small gap above form */
 }
 
 form {
     width: 90%;
     margin: 0;
-    padding: 0.5em 5% 1em; /* longhand 0.5em 5% 1em 5% */
-    background: #000;
+    padding: 1em 5%; /* longhand 0.5em 5% 1em 5% */
+    background: #f1eee1; /* N-94 */
+    border-bottom: 1px solid #cbc7b5; /* NV-80 */
     flex: initial;
     display: flex;
     flex-flow: row wrap;
+    justify-content: flex-start; /* main axis */
+    align-items: center; /* cross axis */
     position: relative;
-}
-
-@media (min-width: 300px) and (max-width: 699px) {
-    form {
-        justify-content: flex-start; /* main axis */
-        align-items: flex-start; /* cross axis */
-    }
-}
-
-@media (min-width: 700px) {
-    form {
-        justify-content: flex-start; /* main axis */
-        align-items: center; /* cross axis */
-    }
 }
 
 form::before {
     content: "";
     position: absolute;
-    top: 0;
-    bottom: 0;
-    right: calc((100vw - 100%) / -2);
-    left: calc((100vw - 100%) / -2);
-    background: #000;
+    inset: 0 calc((100vw - 100%) / -2) -1px calc((100vw - 100%) / -2); /* shorthand top, right, bottom, left */
+    background: #f1eee1; /* N-94 */
+    border-bottom: 1px solid #cbc7b5; /* NV-80 */
     z-index: -1;
 }
 
-input {
-    padding: 0.5em 1.5em;
-}
-
-@media (min-width: 300px) and (max-width: 399px) {
+@media (min-width: 300px) and (max-width: 699px) {
     input {
-        width: calc(100% - 3em);
-        margin: 0;
+        width: 95%;
+        margin: 0.75em 0;
+        padding: 0.25em 2.5%;
     }
 }
 
-@media (min-width: 400px) and (max-width: 499px) {
+@media (min-width: 700px) {
     input {
-        width: calc(90% - 3em);
-        margin: 0;
-    }
-}
-
-@media (min-width: 500px) and (max-width: 599px) {
-    input {
-        width: calc(80% - 3em);
-        margin: 0;
-    }
-}
-
-@media (min-width: 600px) and (max-width: 699px) {
-    input {
-        width: calc(70% - 3em);
-        margin-right: 10%;
-    }
-}
-
-@media (min-width: 700px) and (max-width: 799px) {
-    input {
-        width: calc(60% - 3em);
-        margin-right: 20%;
-    }
-}
-
-@media (min-width: 800px) and (max-width: 899px) {
-    input {
-       width: calc(55% - 3em);
-       margin: 0;
-    }
-}
-
-@media (min-width: 900px) and (max-width: 999px) {
-    input {
-       width: calc(45% - 3em);
-       margin: 0;
-    }
-}
-
-@media (min-width: 1000px) {
-    input {
-       width: calc(35% - 3em);
-       margin: 0;
+        width: 45%;
+        margin: 0.75em 2.5% 0.75em 0;
+        padding: 0.25em 2.5%;
     }
 }
 
 input::placeholder {
-    color: #201a18;
+    color: #49473a; /* NV-30 */
 }
 
 button {
-    width: 7em;
+    width: 4em;
+    margin-right: 2.5%;
     padding: 0;
     border-radius: 8px;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -196,42 +137,159 @@ button {
     font-weight: 500;
 }
 
-@media (min-width: 300px) and (max-width: 799px) {
-    button {
-        margin: 1em 1em 0 0;
-    }
-}
-
-@media (min-width: 800px) {
-    button {
-        margin: 0 0 0 1em;
-    }
-}
-
 button:hover {
     cursor: pointer;
 }
 
 .btn-go {
-    border: 1px solid #9cd67e; /* secondary 80 */
-    background: #9cd67e; /* secondary 80 */
-    color: #000;
+    border: none;
+    background: #666014; /* P-40 */
+    color: #fff; /* P-100 */
 }
 
 .btn-go:hover {
-    background: #81ba66; /* secondary 70 */
-    border: 1px solid #81ba66; /* secondary 70 */
+    background: #595419; /* P-35 */
 }
 
 .btn-clear {
-    border: 1px solid #fff;
-    background: #000;
-    color: #fff;
+    background: none;
+    border: 1px solid #cbc7b5; /* NV-80 */
+    color: #49473a; /* NV-30 */
 }
 
 .btn-clear:hover {
-    border: 1px solid #ede0db; /* neutral 90 */
-    color: #ede0db; /* neutral 90 */
+    background: #dddacd; /* N-87 */
+}
+
+.overview-boxes {
+    width: 90%;
+    margin: 0;
+    padding: 0 5%;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.overview-about {
+    background: #eee58c;
+    border-radius: 12px;
+    flex: initial;
+}
+
+.overview-alert {
+    background: #f1eee1; /* N-94 */
+    border-radius: 12px;
+    flex: initial;
+}
+
+@media (min-width: 300px) and (max-width: 799px) {
+    .overview-boxes {
+        justify-content: flex-start; /* main axis */
+        align-items: flex-start; /* cross axis */
+    }
+
+    .overview-about {
+        width: 90%;
+        margin: 1em 0;
+        padding: 1em 5%;
+    }
+
+    .overview-alert {
+        width: 90%;
+        margin: 1em 0;
+        padding: 1em 5%;
+    }
+}
+
+@media (min-width: 800px) {
+    .overview-boxes {
+        justify-content: space-between; /* main axis */
+        align-items: stretch; /* cross axis */
+    }
+
+    .overview-about {
+        width: 35%;
+        margin: 0;
+        padding: 1em 5%;
+    }
+
+    .overview-alert {
+        width: 40%;
+        margin: 0;
+        padding: 1em 5%;
+    }
+}
+
+.overview-alert-type {
+    width: 100%;
+    margin-bottom: 1em;
+    padding: 0;
+    flex: initial;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between; /* main axis */
+    align-items: flex-start; /* cross axis */
+}
+
+.overview-badge {
+    padding: 0;
+    text-align: center;
+}
+
+@media (min-width: 300px) and (max-width: 399px) {
+    .overview-badge {
+        width: 80%;
+        margin: 0 10% 1em; /* longhand is 0 10% 1em 10% */
+    }
+
+    .overview-badge:last-child {
+        margin-bottom: 0;
+    }
+}
+
+@media (min-width: 400px) and (max-width: 499px) {
+    .overview-badge {
+        width: 70%;
+        margin: 0 15% 1em; /* longhand is 0 15% 1em 15% */
+    }
+
+    .overview-badge:last-child {
+        margin-bottom: 0;
+    }
+}
+
+@media (min-width: 500px) and (max-width: 599px) {
+    .overview-badge {
+        width: 60%;
+        margin: 0 20% 1em; /* longhand is 0 20% 1em 20% */
+    }
+
+    .overview-badge:last-child {
+        margin-bottom: 0;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 799px) {
+    .overview-badge {
+        width: 40%;
+        margin: 0 0 1em; /* longhand is 0 0 1em 0 */
+    }
+
+    /* last two badges */
+    .overview-badge:nth-last-child(-n + 2) {
+        margin: 0;
+    }
+}
+
+@media (min-width: 800px) {
+    .overview-badge {
+        width: 45%;
+        margin: 0 0 1em; /* longhand is 0 0 1em 0 */
+    }
+
+    /* last two badges */
+    .overview-badge:nth-last-child(-n + 2) {
+        margin: 0;
+    }
 }
 
 section {
@@ -251,13 +309,6 @@ section {
         width: 35%;
         padding: 1em 0 1em 5%;
     }
-}
-
-#overview-about {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    flex: initial;
 }
 
 aside {
@@ -306,7 +357,9 @@ aside {
     width: 90%;
     margin: 1em 0;
     padding: 1em 5%;
-    background: #ede0eb; /* neutral 90 */
+    background: #f1eee1; /* N-94 */
+    border: 1px solid #cbc7b5; /* NV-80 */
+    border-radius: 12px;
     flex: initial;
     display: flex;
     flex-flow: row wrap;
@@ -316,7 +369,7 @@ aside {
 
 .alert-type {
     width: 100%;
-    margin: 0%;
+    margin: 0;
     padding: 0;
     flex: initial;
     display: flex;
@@ -380,49 +433,7 @@ aside {
     }
 }
 
-.badge-big {
-    margin: 1em 0 0; /* longhand 1em 0 0 0 */
-    padding: 0;
-    text-align: center;
-    flex: initial;
-}
-
-@media (min-width: 300px) and (max-width: 399px) {
-    .badge-big {
-        width: 60%;
-    }
-}
-
-@media (min-width: 400px) and (max-width: 499px) {
-    .badge-big {
-        width: 55%;
-    }
-}
-
-@media (min-width: 500px) and (max-width: 599px) {
-    .badge-big {
-        width: 50%;
-    }
-}
-
-@media (min-width: 600px) and (max-width: 699px) {
-    .badge-big {
-        width: 45%;
-    }
-}
-
-@media (min-width: 700px) and (max-width: 799px) {
-    .badge-big {
-        width: 40%;
-    }
-}
-
-@media (min-width: 800px) {
-    .badge-big {
-        width: 35%;
-    }
-}
-
+/* Background colors for badges */
 .closure {
     background: #baad37; /* green */
 }
@@ -462,45 +473,50 @@ h2 {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     line-height: 1.5;
     font-weight: 600;
-    color: #201a18;
+    color: #1c1c14; /* N-10 */
 }
 
+/* Types of alerts -> Info, Park Closure, etc. */
 h3 {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     line-height: 1.3;
     font-weight: 500;
-    color: #201a18;
+    color: #1c1c14; /* N-10 */
     text-transform: uppercase;
     margin-top: 0.4em;
     margin-bottom: 0.4em;
 }
 
+/* Titles in alert boxes */
 h4 {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     line-height: 1.5;
     font-weight: 500;
-    color: #201a18;
+    color: #1c1c14; /* P-10 */
 }
 
 p {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     line-height: 1.8;
     font-weight: 400;
-    color: #201a18;
+    color: #1c1c14; /* N-10 */
+}
+
+.primary-txt {
+    color: #1f1c00; /* P-10 */
 }
 
 .error-msg {
-    color: #ba1a1a;
+    color: #ba1a1a; /* E-40 */
 }
 
 label {
-    width: 100%;
-    margin-bottom: 0.5em;
+    margin-right: 2.5%;
     padding: 0;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    line-height: 1;
+    line-height: 1.2;
     font-weight: 500;
-    color: #fff;
+    color: #1c1c14; /* N-10 */
 }
 
 dl {
@@ -515,14 +531,15 @@ dd {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     line-height: 1.5;
     font-weight: 400;
-    color: #281900;
-    background: #ede0eb; /* neutral 90 */
+    color: #261a00; /* T-10 */
+    background: #ffdfa0; /* T-90 */
+    border-radius: 12px;
     text-align: center;
 }
 
 dd:hover {
     cursor: pointer;
-    background: #d0c4bf; /* neutral 80 */
+    background: #e3c278; /* T-80 */
 }
 
 /* Media queries for fonts */
