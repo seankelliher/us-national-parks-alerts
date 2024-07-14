@@ -1,7 +1,7 @@
 [![MIT License on GitHub](https://img.shields.io/github/license/seankelliher/us-national-parks-alerts?style=flat-square)](/LICENSE.txt)
 ## US National Parks Alerts
 
-Searchable directory to easily find alerts (informational announcements, park closures, cautions, and warnings) for any of the 471 parks managed by the National Park Service. Built with Vue.js and Express.js. [View working component](https://us-national-parks-alerts-fa601db96052.herokuapp.com). **"Eco" dyno, takes a few seconds to wake up.** 
+Searchable directory for alerts on conditions at National Park Service (NPS) parks in the US and overseas. There are 471 areas. Alerts are drawn through an API managed by NPS. This project is built with Vue.js and Express.js. [View working component](https://us-national-parks-alerts-fa601db96052.herokuapp.com). **"Eco" dyno, takes a few seconds to wake up.** 
 
 ## Project Status
 
@@ -12,7 +12,7 @@ Project meets general accessibility (WACG) and cross-browser requirements. More 
 * Starting view.
 ![screen shot of project](/screenshots/us-national-parks-alerts-screenshot1.png?s=600)
 
-* Alerts for Acadia National Park.
+* Alerts for Great Smoky Mountains National Park.
 ![screen shot of project](/screenshots/us-national-parks-alerts-screenshot2.png?s=600)
 
 ## Installation and Setup Instructions
@@ -34,16 +34,6 @@ To Start the Express server:
 To Visit App:
 
 Visit the localhost port displayed in the terminal after running `npm run dev`. You may need to disable your browser's Cross-Origin Restrictions.
-
-## Reflection
-
-My goal was to build an application that offers alerts for the (currently) 471 parks managed by the US National Park Service (NPS). If you were visiting a park, it would be a central asset to find what closures, warnings, and dangers are awaiting you.
-
-Due to rate limiting, it was not practical to use NPS’s API to gather the names of all parks. I built a list of parks and stored it locally, along with multiple searchable names for some parks. For example, I created park names with and without accent marks; World War II and World War Two; with and without someone’s middle initial.
-
-For process - the user inputs a park name or part of a park name into a search bar; the application returns the matching results. From here, the user chooses the desired park; the application adds the park's ID to front-end's request URL; passes it to the back-end's request URL; the back-end fetches the alerts using NPS’s API; and passes the results to the front-end to be displayed.
-
-There were several challenges. I wanted to emulate the style of the real NPS website so I studied it and made my design accordingly. Error handling was also challenging. I wanted to ensure users received an error message if the fetch didn’t work properly. I was also concerned about user behavior. I ran searches over and over to locate problems with both expected and odd user behavior and developed error handling to address them. For example, initially I was getting some errors and non-responsive buttons if users ran the same search repeatedly.
 
 ## Acknowledgments
 
