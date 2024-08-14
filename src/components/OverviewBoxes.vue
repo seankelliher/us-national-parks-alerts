@@ -1,15 +1,11 @@
 <script setup>
-import { store } from "../store.js";
 </script>
 
 <template>
-    <div
-        class="overview-boxes"
-        v-if="store.overviewBoxes"
-    >
+    <div class="overview-boxes">
         <div class="overview-about">
-            <h2 class="primary-txt">Before you travel</h2>
-            <p class="primary-txt">The National Park Service provides alerts on conditions in its over 470 areas in the United States, District of Columbia, and overseas territories - American Samoa, Guam, Northern Mariana Islands, Puerto Rico, the U.S. Minor Outlying Islands, and the U.S. Virgin Islands. Check before you travel.</p>
+            <h2>Before you travel</h2>
+            <p>The National Park Service provides alerts on conditions in its over 470 areas in the United States, District of Columbia, and overseas territories - American Samoa, Guam, Northern Mariana Islands, Puerto Rico, the U.S. Minor Outlying Islands, and the U.S. Virgin Islands. Check before you travel.</p>
         </div>
 
         <div class="overview-alert">
