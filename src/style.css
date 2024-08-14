@@ -1,6 +1,8 @@
 /* Stylesheet uses Level 3 Media Queries. Level 4 coverage still spotty. */
 body {
     margin-top: 0;
+    margin-bottom: 0;
+    background: #f5fbf6; /* N-98 */
 }
 
 img { 
@@ -24,7 +26,7 @@ header {
     width: 90%;
     margin: 0;
     padding: 0.25em 5%;
-    background: #313128; /* N-20 */
+    background: #2b322f; /* N-20 */
     flex: initial;
     display: flex;
     flex-flow: row wrap;
@@ -37,7 +39,7 @@ header::before {
     content: "";
     position: absolute;
     inset: 0 calc((100vw - 100%) / -2) 0 calc((100vw - 100%) / -2); /* shorthand top, right, bottom, left */
-    background: #313128; /* N-20 */
+    background: #2b322f; /* N-20 */
     z-index: -1;
 }
 
@@ -55,13 +57,11 @@ header::before {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     line-height: 1.8;
     font-weight: 500;
-    color: #f4f1e3; /* N-95 */
-    background: #313128; /* N-20 */
-    background: rgb(49 49 40 / 80%); /* N-20 */
-    border: 1px solid #f4f1e3; /* N-95 */
+    color: #ecf2ee; /* N-95 */
+    border: 1px solid #ecf2ee; /* N-95 */
     position: absolute;
     right: 5%;
-    top: 0.75em;
+    bottom: 0.75em;
 }
 
 figure {
@@ -88,8 +88,9 @@ form {
     width: 90%;
     margin: 0;
     padding: 1em 5%; /* longhand 0.5em 5% 1em 5% */
-    background: #f1eee1; /* N-94 */
-    border-bottom: 1px solid #cbc7b5; /* NV-80 */
+    background: #dee4e0; /* N-90 */
+    border-top: 1px solid #d5dbd7; /* N-87 */
+    border-bottom: 1px solid #d5dbd7; /* N-87 */
     flex: initial;
     display: flex;
     flex-flow: row wrap;
@@ -102,8 +103,9 @@ form::before {
     content: "";
     position: absolute;
     inset: 0 calc((100vw - 100%) / -2) -1px calc((100vw - 100%) / -2); /* shorthand top, right, bottom, left */
-    background: #f1eee1; /* N-94 */
-    border-bottom: 1px solid #cbc7b5; /* NV-80 */
+    background: #dee4e0; /* N-90 */
+    border-top: 1px solid #d5dbd7; /* N-87 */
+    border-bottom: 1px solid #d5dbd7; /* N-87 */
     z-index: -1;
 }
 
@@ -124,7 +126,7 @@ form::before {
 }
 
 input::placeholder {
-    color: #49473a; /* NV-30 */
+    color: #3f4945; /* NV-30 */
 }
 
 button {
@@ -142,23 +144,23 @@ button:hover {
 }
 
 .btn-go {
+    background: #106b57; /* P-40 */
     border: none;
-    background: #666014; /* P-40 */
     color: #fff; /* P-100 */
 }
 
 .btn-go:hover {
-    background: #595419; /* P-35 */
+    background: #bfc9c4; /* NV-80 */
 }
 
 .btn-clear {
     background: none;
-    border: 1px solid #cbc7b5; /* NV-80 */
-    color: #49473a; /* NV-30 */
+    border: 1px solid #bfc9c4; /* NV-80 */
+    color: #3f4945; /* NV-30 */
 }
 
 .btn-clear:hover {
-    background: #dddacd; /* N-87 */
+    background: #bfc9c4; /* NV-80 */
 }
 
 .overview-boxes {
@@ -170,13 +172,15 @@ button:hover {
 }
 
 .overview-about {
-    background: #eee58c;
+    padding: 1em 5%;
+    background: #e9efeb; /* N-94 */
     border-radius: 12px;
     flex: initial;
 }
 
 .overview-alert {
-    background: #f1eee1; /* N-94 */
+    padding: 1em 5%;
+    background: #e9efeb; /* N-94 */
     border-radius: 12px;
     flex: initial;
 }
@@ -189,14 +193,12 @@ button:hover {
 
     .overview-about {
         width: 90%;
-        margin: 1em 0;
-        padding: 1em 5%;
+        margin: 2em 0;
     }
 
     .overview-alert {
         width: 90%;
-        margin: 1em 0;
-        padding: 1em 5%;
+        margin: 0 0 2em; /* longhand 0 0 2em 0 */
     }
 }
 
@@ -208,14 +210,12 @@ button:hover {
 
     .overview-about {
         width: 35%;
-        margin: 0;
-        padding: 1em 5%;
+        margin: 2em 0;
     }
 
     .overview-alert {
         width: 40%;
-        margin: 0;
-        padding: 1em 5%;
+        margin: 2em 0;
     }
 }
 
@@ -292,6 +292,62 @@ button:hover {
     }
 }
 
+.lookup {
+    width: 80%;
+    margin: 2em 5%;
+    padding: 1em 5%;
+    border-radius: 12px;
+    border: 2px solid #d5dbd7; /* N-87 */
+    flex: initial;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start; /* main axis */
+    align-items: flex-start; /* cross axis */
+}
+
+.lookup-title {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    flex: initial;
+}
+
+.lookup-nav {
+    width: 100%;
+    margin: 0;
+    padding: 0.25em 0;
+    border: 1px solid #d5dbd7; /* N-87 */
+    flex: initial;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center; /* main axis */
+    align-items: flex-start; /* cross axis */
+    box-shadow: 0 4px 4px #d5dbd7; /* N-87 */
+}
+
+/* Span class for list of letters, A, B, C, etc. */
+.letter {
+    padding: 0 0.5em;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+    color: #171d1b; /* N-10 */
+}
+
+.letter:hover {
+    cursor: pointer;
+    background: #d5dbd7; /* N-87 */
+}
+
+.lookup-results {
+    width: 100%;
+    height: 12em;
+    overflow-y: scroll;
+    margin: 0;
+    padding: 0;
+    flex: initial;
+}
+
 section {
     margin: 0;
     flex: initial;
@@ -300,14 +356,14 @@ section {
 @media (min-width: 300px) and (max-width: 799px) {
     section {
         width: 90%;
-        padding: 1em 5% 0; /* longhand 1em 5% 0 5% */
+        padding: 0 5%;
     }
 }
 
 @media (min-width: 800px) {
     section {
         width: 35%;
-        padding: 1em 0 1em 5%;
+        padding: 0 0 0 5%;
     }
 }
 
@@ -331,7 +387,7 @@ aside {
 @media (min-width: 800px) {
     aside {
         width: 50%;
-        padding: 1em 5%;
+        padding: 0 5%;
     }
 }
 
@@ -357,8 +413,7 @@ aside {
     width: 90%;
     margin: 1em 0;
     padding: 1em 5%;
-    background: #f1eee1; /* N-94 */
-    border: 1px solid #cbc7b5; /* NV-80 */
+    background: #e9efeb; /* N-94 */
     border-radius: 12px;
     flex: initial;
     display: flex;
@@ -461,19 +516,40 @@ aside {
     flex: initial;
 }
 
+footer {
+    width: 90%;
+    margin: 0;
+    padding: 1em 5%;
+    background: #2b322f; /* N-20 */
+    flex: initial;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start; /* main axis */
+    align-items: center; /* cross axis */
+    position: relative;
+}
+
+footer::before {
+    content: "";
+    position: absolute;
+    inset: 0 calc((100vw - 100%) / -2) 0 calc((100vw - 100%) / -2); /* shorthand top, right, bottom, left */
+    background: #2b322f; /* N-20 */
+    z-index: -1;
+}
+
 /* Font styles and their media queries */
 h1 {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     line-height: 1.5;
     font-weight: 600;
-    color: #fff;
+    color: #fff; /* N-100 */
 }
 
 h2 {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     line-height: 1.5;
     font-weight: 600;
-    color: #1c1c14; /* N-10 */
+    color: #171d1b; /* N-10 */
 }
 
 /* Types of alerts -> Info, Park Closure, etc. */
@@ -481,7 +557,7 @@ h3 {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     line-height: 1.3;
     font-weight: 500;
-    color: #1c1c14; /* N-10 */
+    color: #171d1b; /* N-10 */
     text-transform: uppercase;
     margin-top: 0.4em;
     margin-bottom: 0.4em;
@@ -492,18 +568,18 @@ h4 {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     line-height: 1.5;
     font-weight: 500;
-    color: #1c1c14; /* P-10 */
+    color: #171d1b; /* N-10 */
 }
 
 p {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     line-height: 1.8;
     font-weight: 400;
-    color: #1c1c14; /* N-10 */
+    color: #171d1b; /* N-10 */
 }
 
-.primary-txt {
-    color: #1f1c00; /* P-10 */
+.white-txt {
+    color: #fff; /* N-100 */
 }
 
 .error-msg {
@@ -516,7 +592,7 @@ label {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     line-height: 1.2;
     font-weight: 500;
-    color: #1c1c14; /* N-10 */
+    color: #171d1b; /* N-10 */
 }
 
 dl {
@@ -530,21 +606,28 @@ dd {
     padding: 0.5em 0;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     line-height: 1.5;
-    font-weight: 400;
-    color: #261a00; /* T-10 */
-    background: #ffdfa0; /* T-90 */
+    font-weight: 500;
+    color: #001e2d; /* T-10 */
+    background: #c5e7ff; /* T-90 */
     border-radius: 12px;
     text-align: center;
 }
 
 dd:hover {
     cursor: pointer;
-    background: #e3c278; /* T-80 */
+    background: #91cef4; /* T-80 */
+}
+
+li {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 1.8;
+    font-weight: 400;
+    color: #171d1b; /* N-10 */
 }
 
 /* Media queries for fonts */
 @media (min-width: 300px) and (max-width: 399px) {
-    p, label, input::placeholder, input[type="text"], dd, button {
+    p, label, input::placeholder, input[type="text"], dd, li, button {
         font-size: 0.875em; /* 14px */
     }
 
@@ -556,13 +639,13 @@ dd:hover {
         font-size: 0.875em; /* 14px */
     }
 
-    h2, h4, .pano-title {
+    h2, h4, .pano-title, .letter {
         font-size: 1em; /* 16px */
     }
 }
 
 @media (min-width: 400px) and (max-width: 499px) {
-    p, label, input::placeholder, input[type="text"], dd, button {
+    p, label, input::placeholder, input[type="text"], dd, li, button {
         font-size: 0.9375em; /* 15px */
     }
 
@@ -574,13 +657,13 @@ dd:hover {
         font-size: 0.9375em; /* 15px */
     }
 
-    h2, h4, .pano-title {
+    h2, h4, .pano-title, .letter {
         font-size: 1.0625em; /* 17px */
     }
 }
 
 @media (min-width: 500px) and (max-width: 599px) {
-    p, label, input::placeholder, input[type="text"], dd, button {
+    p, label, input::placeholder, input[type="text"], dd, li, button {
         font-size: 1em; /* 16px */
     }
 
@@ -592,13 +675,13 @@ dd:hover {
         font-size: 1em; /* 16px */
     }
 
-    h2, h4, .pano-title {
+    h2, h4, .pano-title, .letter {
         font-size: 1.125em; /* 18 px */
     }
 }
 
 @media (min-width: 600px) {
-    p, label, input::placeholder, input[type="text"], dd, button {
+    p, label, input::placeholder, input[type="text"], dd, li, button {
         font-size: 1.0625em; /* 17px */
     }
 
@@ -610,7 +693,7 @@ dd:hover {
         font-size: 0.875em; /* 14px */
     }
 
-    h2, h4, .pano-title {
+    h2, h4, .pano-title, .letter {
         font-size: 1.1875em; /* 19px */
     }
 }
