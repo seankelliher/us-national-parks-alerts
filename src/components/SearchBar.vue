@@ -6,7 +6,7 @@ defineEmits(["runSearchTerm", "clearSearchTerm"]);
 
 <template>
     <form @submit.prevent="onSubmit">
-        <label for="search-park-name">Find a park</label>
+        <label for="search-park-name">Find alerts</label>
         <input
             id="search-park-name"
             type="text"
