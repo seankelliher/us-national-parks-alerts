@@ -38,6 +38,7 @@ Visit the localhost port displayed in the terminal after running `npm run dev`. 
 ## Acknowledgments
 
 * Park alerts and logo from the [National Park Service](https://www.nps.gov/index.htm).
+* Photo of Alaska Range from the [National Park Service](https://www.nps.gov/media/photo/view.htm?id=A8F90883-5943-4629-800F-B27897CBD996).
 * Readme guidance from [Brenna Martenson](https://gist.github.com/martensonbj/6bf2ec2ed55f5be723415ea73c4557c4).
 * Design guidance from Google's [Material Design](https://material.io/design).
 * Linting guidance from [ESLint](https://eslint.org) and [Stylelint](https://stylelint.io).
