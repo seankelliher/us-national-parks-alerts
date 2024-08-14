@@ -5,10 +5,10 @@
     <div class="pano">
         <figure class="full-width">
             <img
-                src="/gettysburg-battlefield.jpg"
-                alt="First Day's Battlefield, Gettysburg. Photo: NPS/Mary O'Neill."
+                src="/mountains-alaska-range.jpg"
+                alt="snow capped mountains in the Alaska Range"
             >
-            <figcaption hidden>Battlefield at Gettysburg, present day</figcaption>
+            <figcaption hidden>The Alaska Range. Photo: National Park Service.</figcaption>
         </figure>
         <div class="pano-title">Park Alerts</div>
     </div>
