@@ -25,7 +25,6 @@ function runSearchTerm() {
                 selectedParks.value.push(parks.indexOf(park));
             }
         });
-        store.displayOverviewBoxes(false);
         store.displayListParks(true);
         store.displayListAlerts(false);
     }
@@ -34,8 +33,7 @@ function runSearchTerm() {
 function clearSearchTerm() {
     errorMsg.value = "";
     searchTerm.value = "";
-    parkForAlert.value = ""; // Same as above.
-    store.displayOverviewBoxes(true);
+    parkForAlert.value = "";
     store.displayListParks(false);
     store.displayListAlerts(false);
 }
