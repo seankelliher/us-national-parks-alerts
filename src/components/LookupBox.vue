@@ -1,7 +1,6 @@
 <script setup>
 import { ref, onMounted } from "vue";
 import { parks } from "../data/parks-list.js";
-// import { store } from "../store.js";
 
 let selects = ref([]);
 
