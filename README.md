@@ -1,7 +1,7 @@
 [![MIT License on GitHub](https://img.shields.io/github/license/seankelliher/us-national-parks-alerts?style=flat-square)](/LICENSE.txt)
 ## US National Parks Alerts
 
-Searchable directory for alerts on conditions at National Park Service (NPS) parks in the US and overseas. There are 471 areas. Alerts are drawn through an API managed by NPS. This project is built with Vue.js and Express.js. [View working component](https://us-national-parks-alerts-fa601db96052.herokuapp.com). **"Eco" dyno, takes a few seconds to wake up.** 
+Searchable directory for alerts at National Park Service (NPS) parks in the US and overseas. There are 471 areas. Alerts are drawn through an API managed by NPS. This project is built with Vue.js and Express.js. [View working component](https://us-national-parks-alerts-fa601db96052.herokuapp.com). **"Eco" dyno, takes a few seconds to wake up.** 
 
 ## Project Status
 
@@ -37,11 +37,12 @@ Visit the localhost port displayed in the terminal after running `npm run dev`. 
 
 ## Acknowledgments
 
-* Park alerts and logo from the [National Park Service](https://www.nps.gov/index.htm).
+* Park alerts from the [National Park Service](https://www.nps.gov/subjects/developer/api-documentation.htm).
 * Photo of Alaska Range from the [National Park Service](https://www.nps.gov/media/photo/view.htm?id=A8F90883-5943-4629-800F-B27897CBD996).
+* NPS logo from [Wikimedia](https://commons.wikimedia.org/wiki/File:US-NationalParkService-Logo.svg).
 * Readme guidance from [Brenna Martenson](https://gist.github.com/martensonbj/6bf2ec2ed55f5be723415ea73c4557c4).
 * Design guidance from Google's [Material Design](https://material.io/design).
 * Linting guidance from [ESLint](https://eslint.org) and [Stylelint](https://stylelint.io).
-* Accessibility guidance form Firefox's Developer Tools.
+* Accessibility guidance from Firefox's Developer Tools and Google Lighthouse.
 * Helpful post on passing variables between Vue and Express [Stackoverflow](https://stackoverflow.com/questions/72233660/pass-variables-from-front-to-backend).
 * Shields from [Shields](https://shields.io).
