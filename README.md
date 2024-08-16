@@ -42,6 +42,7 @@ Visit the localhost port displayed in the terminal after running `npm run dev`. 
 * NPS logo from [Wikimedia](https://commons.wikimedia.org/wiki/File:US-NationalParkService-Logo.svg).
 * Readme guidance from [Brenna Martenson](https://gist.github.com/martensonbj/6bf2ec2ed55f5be723415ea73c4557c4).
 * Design guidance from Google's [Material Design](https://material.io/design).
+* Icon from Google's [icon library](https://fonts.google.com/icons).
 * Linting guidance from [ESLint](https://eslint.org) and [Stylelint](https://stylelint.io).
 * Accessibility guidance from Firefox's Developer Tools and Google Lighthouse.
 * Helpful post on passing variables between Vue and Express [Stackoverflow](https://stackoverflow.com/questions/72233660/pass-variables-from-front-to-backend).
