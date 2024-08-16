@@ -6,6 +6,7 @@ let selects = ref([]);
 
 onMounted(() => {
     showParks("A");
+    readyClipboard();
 });
 
 function showParks(ltr) {
@@ -16,6 +17,29 @@ function showParks(ltr) {
         }
     });
 }
+
+function readyClipboard() {
+    const lookupResults = document.querySelector(".lookup-results");
+
+    lookupResults.addEventListener("click", function (event) {
+
+        if (event.target.className === "copy-icon") {
+            const parkName = event.target.previousSibling.textContent;
+            const copied = event.target.nextSibling;
+
+            navigator.clipboard.writeText(parkName)
+                .then (() => {
+                    copied.setAttribute("style", "display: inline-flex");
+                    copied.classList.add("fades");
+                    setTimeout(() => {
+                        copied.classList.remove("fades");
+                        copied.removeAttribute("style", "display: inline-flex");
+                    }, 1000);
+                });
+        }
+    });
+}
+
 </script>
 
 <template>
@@ -52,7 +76,13 @@ function showParks(ltr) {
         <div class="lookup-results">
             <ul>
                 <li v-for="select in selects.sort()" :key="select.index">
-                    {{ select }}
+                    <span class="copy-name">{{ select }}</span>
+                    <img
+                        src="/copy-icon-20.svg"
+                        alt="copy to clipboard icon"
+                        class="copy-icon"
+                    >
+                    <span class="copied">Copied!</span>
                 </li>
             </ul>
         </div>
