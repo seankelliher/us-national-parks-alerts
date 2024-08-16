@@ -6,7 +6,7 @@ let selects = ref([]);
 
 onMounted(() => {
     showParks("A");
-    readyClipboard();
+    readyClip();
 });
 
 function showParks(ltr) {
@@ -18,11 +18,23 @@ function showParks(ltr) {
     });
 }
 
-function readyClipboard() {
-    const lookupResults = document.querySelector(".lookup-results");
+// Monitors and copies text to clipboard.
+function readyClip() {
+    const lookup = document.querySelector(".lookup-results");
 
-    lookupResults.addEventListener("click", function (event) {
+    lookup.addEventListener("click", function (event) {
+        runClip(event);
+    });
 
+    lookup.addEventListener("keyup", function (event) {
+        if (event.key === "Enter") {
+            runClip(event);
+        }
+    });
+
+    // Grouping click & keyup in an array and looping thru it works too.
+    // But, if user tabs thru CB icons, text gets copied every tab. Distracting.
+    function runClip(event) {
         if (event.target.className === "copy-icon") {
             const parkName = event.target.previousSibling.textContent;
             const copied = event.target.nextSibling;
@@ -37,9 +49,8 @@ function readyClipboard() {
                     }, 1000);
                 });
         }
-    });
+    }
 }
-
 </script>
 
 <template>
@@ -49,29 +60,190 @@ function readyClipboard() {
         </div>
         <!-- No park names begin with Q, U, X -->
         <div class="lookup-nav">
-            <span @click="showParks('A')" class="letter">A</span>
-            <span @click="showParks('B')" class="letter">B</span>
-            <span @click="showParks('C')" class="letter">C</span>
-            <span @click="showParks('D')" class="letter">D</span>
-            <span @click="showParks('E')" class="letter">E</span>
-            <span @click="showParks('F')" class="letter">F</span>
-            <span @click="showParks('G')" class="letter">G</span>
-            <span @click="showParks('H')" class="letter">H</span>
-            <span @click="showParks('I')" class="letter">I</span>
-            <span @click="showParks('J')" class="letter">J</span>
-            <span @click="showParks('K')" class="letter">K</span>
-            <span @click="showParks('L')" class="letter">L</span>
-            <span @click="showParks('M')" class="letter">M</span>
-            <span @click="showParks('N')" class="letter">N</span>
-            <span @click="showParks('O')" class="letter">O</span>
-            <span @click="showParks('P')" class="letter">P</span>
-            <span @click="showParks('R')" class="letter">R</span>
-            <span @click="showParks('S')" class="letter">S</span>
-            <span @click="showParks('T')" class="letter">T</span>
-            <span @click="showParks('V')" class="letter">V</span>
-            <span @click="showParks('W')" class="letter">W</span>
-            <span @click="showParks('Y')" class="letter">Y</span>
-            <span @click="showParks('Z')" class="letter">Z</span>
+            <span
+                @click="showParks('A')"
+                @keyup.enter="showParks('A')"
+                class="letter"  
+                tabindex="0"
+            >
+                A
+            </span>
+            <span
+                @click="showParks('B')"
+                @keyup.enter="showParks('B')"
+                class="letter"  
+                tabindex="0"
+            >
+                B
+            </span>
+            <span
+                @click="showParks('C')"
+                @keyup.enter="showParks('C')"
+                class="letter"  
+                tabindex="0"
+            >
+                C
+            </span>
+            <span
+                @click="showParks('D')"
+                @keyup.enter="showParks('D')"
+                class="letter"  
+                tabindex="0"
+            >
+                D
+            </span>
+            <span
+                @click="showParks('E')"
+                @keyup.enter="showParks('E')"
+                class="letter"  
+                tabindex="0"
+            >
+                E
+            </span>
+            <span
+                @click="showParks('F')"
+                @keyup.enter="showParks('F')"
+                class="letter"  
+                tabindex="0"
+            >
+                F
+            </span>
+            <span
+                @click="showParks('G')"
+                @keyup.enter="showParks('G')"
+                class="letter"  
+                tabindex="0"
+            >
+                G
+            </span>
+            <span
+                @click="showParks('H')"
+                @keyup.enter="showParks('H')"
+                class="letter"  
+                tabindex="0"
+            >
+                H
+            </span>
+            <span
+                @click="showParks('I')"
+                @keyup.enter="showParks('I')"
+                class="letter"  
+                tabindex="0"
+            >
+                I
+            </span>
+            <span
+                @click="showParks('J')"
+                @keyup.enter="showParks('J')"
+                class="letter"  
+                tabindex="0"
+            >
+                J
+            </span>
+            <span
+                @click="showParks('K')"
+                @keyup.enter="showParks('K')"
+                class="letter"  
+                tabindex="0"
+            >
+                K
+            </span>
+            <span
+                @click="showParks('L')"
+                @keyup.enter="showParks('L')"
+                class="letter"  
+                tabindex="0"
+            >
+                L
+            </span>
+            <span
+                @click="showParks('M')"
+                @keyup.enter="showParks('M')"
+                class="letter"  
+                tabindex="0"
+            >
+                M
+            </span>
+            <span
+                @click="showParks('N')"
+                @keyup.enter="showParks('N')"
+                class="letter"  
+                tabindex="0"
+            >
+                N
+            </span>
+            <span
+                @click="showParks('O')"
+                @keyup.enter="showParks('O')"
+                class="letter"  
+                tabindex="0"
+            >
+                O
+            </span>
+            <span
+                @click="showParks('P')"
+                @keyup.enter="showParks('P')"
+                class="letter"  
+                tabindex="0"
+            >
+                P
+            </span>
+            <span
+                @click="showParks('R')"
+                @keyup.enter="showParks('R')"
+                class="letter"  
+                tabindex="0"
+            >
+                R
+            </span>
+            <span
+                @click="showParks('S')"
+                @keyup.enter="showParks('S')"
+                class="letter"  
+                tabindex="0"
+            >
+                S
+            </span>
+            <span
+                @click="showParks('T')"
+                @keyup.enter="showParks('T')"
+                class="letter"  
+                tabindex="0"
+            >
+                T
+            </span>
+            <span
+                @click="showParks('V')"
+                @keyup.enter="showParks('V')"
+                class="letter"  
+                tabindex="0"
+            >
+                V
+            </span>
+            <span
+                @click="showParks('W')"
+                @keyup.enter="showParks('W')"
+                class="letter"  
+                tabindex="0"
+            >
+                W
+            </span>
+            <span
+                @click="showParks('Y')"
+                @keyup.enter="showParks('Y')"
+                class="letter"  
+                tabindex="0"
+            >
+                Y
+            </span>
+            <span
+                @click="showParks('Z')"
+                @keyup.enter="showParks('Z')"
+                class="letter"  
+                tabindex="0"
+            >
+                Z
+            </span>
         </div>
         <div class="lookup-results">
             <ul>
@@ -81,6 +253,7 @@ function readyClipboard() {
                         src="/copy-icon-20.svg"
                         alt="copy to clipboard icon"
                         class="copy-icon"
+                        tabindex="0"
                     >
                     <span class="copied">Copied!</span>
                 </li>
