@@ -268,7 +268,7 @@ function readyClip() {
                 Z
             </span>
         </div>
-        <div class="lookup-results" tabindex="0">
+        <div class="lookup-results" tabindex="0" role="listbox">
             <ul>
                 <li v-for="select in selects.sort()" :key="select.index">
                     <span class="copy-name">{{ select }}</span>
