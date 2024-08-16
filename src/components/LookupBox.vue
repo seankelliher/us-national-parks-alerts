@@ -65,6 +65,7 @@ function readyClip() {
                 @keyup.enter="showParks('A')"
                 class="letter"  
                 tabindex="0"
+                role="button"
             >
                 A
             </span>
@@ -73,6 +74,7 @@ function readyClip() {
                 @keyup.enter="showParks('B')"
                 class="letter"  
                 tabindex="0"
+                role="button"
             >
                 B
             </span>
@@ -81,6 +83,7 @@ function readyClip() {
                 @keyup.enter="showParks('C')"
                 class="letter"  
                 tabindex="0"
+                role="button"
             >
                 C
             </span>
@@ -89,6 +92,7 @@ function readyClip() {
                 @keyup.enter="showParks('D')"
                 class="letter"  
                 tabindex="0"
+                role="button"
             >
                 D
             </span>
@@ -97,6 +101,7 @@ function readyClip() {
                 @keyup.enter="showParks('E')"
                 class="letter"  
                 tabindex="0"
+                role="button"
             >
                 E
             </span>
@@ -105,6 +110,7 @@ function readyClip() {
                 @keyup.enter="showParks('F')"
                 class="letter"  
                 tabindex="0"
+                role="button"
             >
                 F
             </span>
@@ -113,6 +119,7 @@ function readyClip() {
                 @keyup.enter="showParks('G')"
                 class="letter"  
                 tabindex="0"
+                role="button"
             >
                 G
             </span>
@@ -121,6 +128,7 @@ function readyClip() {
                 @keyup.enter="showParks('H')"
                 class="letter"  
                 tabindex="0"
+                role="button"
             >
                 H
             </span>
@@ -129,6 +137,7 @@ function readyClip() {
                 @keyup.enter="showParks('I')"
                 class="letter"  
                 tabindex="0"
+                role="button"
             >
                 I
             </span>
@@ -137,6 +146,7 @@ function readyClip() {
                 @keyup.enter="showParks('J')"
                 class="letter"  
                 tabindex="0"
+                role="button"
             >
                 J
             </span>
@@ -145,6 +155,7 @@ function readyClip() {
                 @keyup.enter="showParks('K')"
                 class="letter"  
                 tabindex="0"
+                role="button"
             >
                 K
             </span>
@@ -153,6 +164,7 @@ function readyClip() {
                 @keyup.enter="showParks('L')"
                 class="letter"  
                 tabindex="0"
+                role="button"
             >
                 L
             </span>
@@ -161,6 +173,7 @@ function readyClip() {
                 @keyup.enter="showParks('M')"
                 class="letter"  
                 tabindex="0"
+                role="button"
             >
                 M
             </span>
@@ -169,6 +182,7 @@ function readyClip() {
                 @keyup.enter="showParks('N')"
                 class="letter"  
                 tabindex="0"
+                role="button"
             >
                 N
             </span>
@@ -177,6 +191,7 @@ function readyClip() {
                 @keyup.enter="showParks('O')"
                 class="letter"  
                 tabindex="0"
+                role="button"
             >
                 O
             </span>
@@ -185,6 +200,7 @@ function readyClip() {
                 @keyup.enter="showParks('P')"
                 class="letter"  
                 tabindex="0"
+                role="button"
             >
                 P
             </span>
@@ -193,6 +209,7 @@ function readyClip() {
                 @keyup.enter="showParks('R')"
                 class="letter"  
                 tabindex="0"
+                role="button"
             >
                 R
             </span>
@@ -201,6 +218,7 @@ function readyClip() {
                 @keyup.enter="showParks('S')"
                 class="letter"  
                 tabindex="0"
+                role="button"
             >
                 S
             </span>
@@ -209,6 +227,7 @@ function readyClip() {
                 @keyup.enter="showParks('T')"
                 class="letter"  
                 tabindex="0"
+                role="button"
             >
                 T
             </span>
@@ -217,6 +236,7 @@ function readyClip() {
                 @keyup.enter="showParks('V')"
                 class="letter"  
                 tabindex="0"
+                role="button"
             >
                 V
             </span>
@@ -225,6 +245,7 @@ function readyClip() {
                 @keyup.enter="showParks('W')"
                 class="letter"  
                 tabindex="0"
+                role="button"
             >
                 W
             </span>
@@ -233,6 +254,7 @@ function readyClip() {
                 @keyup.enter="showParks('Y')"
                 class="letter"  
                 tabindex="0"
+                role="button"
             >
                 Y
             </span>
@@ -241,6 +263,7 @@ function readyClip() {
                 @keyup.enter="showParks('Z')"
                 class="letter"  
                 tabindex="0"
+                role="button"
             >
                 Z
             </span>
@@ -254,6 +277,7 @@ function readyClip() {
                         alt="copy to clipboard icon"
                         class="copy-icon"
                         tabindex="0"
+                        role="button"
                     >
                     <span class="copied">Copied!</span>
                 </li>
