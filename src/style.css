@@ -341,11 +341,22 @@ button:hover {
 
 .lookup-results {
     width: 100%;
-    height: 12em;
-    overflow-y: scroll;
     margin: 0;
     padding: 0;
     flex: initial;
+}
+
+.paginate-container {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: #e9efeb; /* N-94 */
+    border-radius: 12px;
+    flex: initial;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around; /* main axis */
+    align-items: flex-start; /* cross axis */
 }
 
 section {
@@ -586,6 +597,15 @@ p {
     color: #ba1a1a; /* E-40 */
 }
 
+.paginate {
+    line-height: 1.2;
+}
+
+.underline:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
 label {
     margin-right: 2.5%;
     padding: 0;
@@ -616,6 +636,55 @@ dd {
 dd:hover {
     cursor: pointer;
     background: #91cef4; /* T-80 */
+}
+
+ul {
+    width: 90%;
+    margin: 1em 0;
+    padding: 0 5%;
+}
+
+/* Keeps pagination prev & next steady as user flips pages */
+@media (min-width: 300px) and (max-width: 399px) {
+    ul {
+        min-height: 368px;
+    }
+}
+
+@media (min-width: 400px) and (max-width: 499px) {
+    ul {
+        min-height: 303px;
+    }
+}
+
+@media (min-width: 500px) and (max-width: 599px) {
+    ul {
+        min-height: 224px;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 699px) {
+    ul {
+        min-height: 240px;
+    }
+}
+
+@media (min-width: 700px) and (max-width: 799px) {
+    ul {
+        min-height: 240px;
+    }
+}
+
+@media (min-width: 800px) and (max-width: 843px) {
+    ul {
+        min-height: 210px;
+    }
+}
+
+@media (min-width: 844px) {
+    ul {
+        min-height: 184px;
+    }
 }
 
 li {

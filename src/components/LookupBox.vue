@@ -3,10 +3,14 @@ import { ref, onMounted } from "vue";
 import { parks } from "../data/parks-list.js";
 
 let selects = ref([]);
+let chunkedSelects = ref([]);
+
+const currentPage = ref(1);
+let totalPages = ref();
 
 onMounted(() => {
     showParks("A");
-    readyClip();
+    readyClipBoard();
 });
 
 function showParks(ltr) {
@@ -16,25 +20,59 @@ function showParks(ltr) {
             selects.value.push(park.fullName);
         }
     });
+    selects.value.sort();
+    paginateArray(selects.value, 6, 1);
+}
+
+function paginateArray(array, pageSize, pageNumber) {
+    // Calculate the starting index of the current page.
+    const startIndex = (pageNumber - 1) * pageSize;
+
+    // Calculate total pages.
+    totalPages.value = Math.ceil(array.length / pageSize);
+
+    // Create a chunk of the array based on the page size.
+    chunkedSelects.value = array.slice(startIndex, startIndex + pageSize);
+
+    // Set current page.
+    currentPage.value = pageNumber;
+
+    // return chunkedSelects;
+}
+
+// Next page in paginated list.
+function nextPage() {
+    if (currentPage.value < totalPages.value) {
+        currentPage.value += 1;
+        paginateArray(selects.value, 6, currentPage.value);
+    }
+}
+
+// Previous page in paginated list/.
+function prevPage() {
+    if (currentPage.value > 1) {
+        currentPage.value -= 1;
+        paginateArray(selects.value, 6, currentPage.value);
+    }
 }
 
 // Monitors and copies text to clipboard.
-function readyClip() {
+function readyClipBoard() {
     const lookup = document.querySelector(".lookup-results");
 
     lookup.addEventListener("click", function (event) {
-        runClip(event);
+        runClipBoard(event);
     });
 
     lookup.addEventListener("keyup", function (event) {
         if (event.key === "Enter") {
-            runClip(event);
+            runClipBoard(event);
         }
     });
 
     // Grouping click & keyup in an array and looping thru it works too.
     // But, if user tabs thru CB icons, text gets copied every tab. Distracting.
-    function runClip(event) {
+    function runClipBoard(event) {
         if (event.target.className === "copy-icon") {
             const parkName = event.target.previousSibling.textContent;
             const copied = event.target.nextSibling;
@@ -268,10 +306,10 @@ function readyClip() {
                 Z
             </span>
         </div>
-        <div class="lookup-results" tabindex="0" role="listbox">
+        <div class="lookup-results">
             <ul>
-                <li v-for="select in selects.sort()" :key="select.index">
-                    <span class="copy-name">{{ select }}</span>
+                <li v-for="chunkedSelect in chunkedSelects" :key="chunkedSelect.index">
+                    <span class="copy-name">{{ chunkedSelect }}</span>
                     <img
                         src="/copy-icon-20.svg"
                         alt="copy to clipboard icon"
@@ -282,6 +320,27 @@ function readyClip() {
                     <span class="copied">Copied!</span>
                 </li>
             </ul>
+        </div>
+        <div class="paginate-container">
+            <p
+                @click="prevPage()"
+                @keyup.enter="prevPage()"
+                class="paginate underline"
+                tabindex="0"
+                role="button"
+            >
+                previous
+            </p>
+            <p class="paginate">{{ currentPage }} of {{ totalPages }}</p>
+            <p
+                @click="nextPage()"
+                @keyup.enter="nextPage()"
+                class="paginate underline"
+                tabindex="0"
+                role="button"
+            >
+                next
+            </p>
         </div>
     </div>
 </template>
