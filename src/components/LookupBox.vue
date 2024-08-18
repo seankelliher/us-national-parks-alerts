@@ -331,8 +331,11 @@ function readyClipBoard() {
                 Z
             </span>
         </div>
-        <!-- Screen readers see div as clickable. tabindex -1 fixes issue. --> 
-        <div class="lookup-results" tabindex="-1">
+        <div
+            class="lookup-results"
+            role="dialog"
+            aria-label="List of park names. Each name can be copied by selecting its copy icon."
+        >
             <ul>
                 <li v-for="chunkedSelect in chunkedSelects" :key="chunkedSelect.index">
                     <span class="copy-name">{{ chunkedSelect }}</span>
