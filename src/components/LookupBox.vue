@@ -2,11 +2,12 @@
 import { ref, onMounted } from "vue";
 import { parks } from "../data/parks-list.js";
 
-let selects = ref([]);
-let chunkedSelects = ref([]);
+const chosenLetter = ref();
 
+const selects = ref([]);
+const chunkedSelects = ref([]);
 const currentPage = ref(1);
-let totalPages = ref();
+const totalPages = ref();
 
 onMounted(() => {
     showParks("A");
@@ -22,6 +23,7 @@ function showParks(ltr) {
     });
     selects.value.sort();
     paginateArray(selects.value, 6, 1);
+    chosenLetter.value = ltr;
 }
 
 function paginateArray(array, pageSize, pageNumber) {
@@ -101,7 +103,8 @@ function readyClipBoard() {
             <span
                 @click="showParks('A')"
                 @keyup.enter="showParks('A')"
-                class="letter"  
+                class="letter"
+                :class="{selected: chosenLetter ===  'A'}"
                 tabindex="0"
                 role="button"
             >
@@ -110,7 +113,8 @@ function readyClipBoard() {
             <span
                 @click="showParks('B')"
                 @keyup.enter="showParks('B')"
-                class="letter"  
+                class="letter"
+                :class="{selected: chosenLetter ===  'B'}"
                 tabindex="0"
                 role="button"
             >
@@ -119,7 +123,8 @@ function readyClipBoard() {
             <span
                 @click="showParks('C')"
                 @keyup.enter="showParks('C')"
-                class="letter"  
+                class="letter"
+                :class="{selected: chosenLetter ===  'C'}"
                 tabindex="0"
                 role="button"
             >
@@ -128,7 +133,8 @@ function readyClipBoard() {
             <span
                 @click="showParks('D')"
                 @keyup.enter="showParks('D')"
-                class="letter"  
+                class="letter"
+                :class="{selected: chosenLetter ===  'D'}"
                 tabindex="0"
                 role="button"
             >
@@ -137,7 +143,8 @@ function readyClipBoard() {
             <span
                 @click="showParks('E')"
                 @keyup.enter="showParks('E')"
-                class="letter"  
+                class="letter"
+                :class="{selected: chosenLetter ===  'E'}"
                 tabindex="0"
                 role="button"
             >
@@ -146,7 +153,8 @@ function readyClipBoard() {
             <span
                 @click="showParks('F')"
                 @keyup.enter="showParks('F')"
-                class="letter"  
+                class="letter"
+                :class="{selected: chosenLetter ===  'F'}"
                 tabindex="0"
                 role="button"
             >
@@ -155,7 +163,8 @@ function readyClipBoard() {
             <span
                 @click="showParks('G')"
                 @keyup.enter="showParks('G')"
-                class="letter"  
+                class="letter"
+                :class="{selected: chosenLetter ===  'G'}"
                 tabindex="0"
                 role="button"
             >
@@ -164,7 +173,8 @@ function readyClipBoard() {
             <span
                 @click="showParks('H')"
                 @keyup.enter="showParks('H')"
-                class="letter"  
+                class="letter"
+                :class="{selected: chosenLetter ===  'H'}"
                 tabindex="0"
                 role="button"
             >
@@ -173,7 +183,8 @@ function readyClipBoard() {
             <span
                 @click="showParks('I')"
                 @keyup.enter="showParks('I')"
-                class="letter"  
+                class="letter"
+                :class="{selected: chosenLetter ===  'I'}"
                 tabindex="0"
                 role="button"
             >
@@ -182,7 +193,8 @@ function readyClipBoard() {
             <span
                 @click="showParks('J')"
                 @keyup.enter="showParks('J')"
-                class="letter"  
+                class="letter"
+                :class="{selected: chosenLetter ===  'J'}"
                 tabindex="0"
                 role="button"
             >
@@ -191,7 +203,8 @@ function readyClipBoard() {
             <span
                 @click="showParks('K')"
                 @keyup.enter="showParks('K')"
-                class="letter"  
+                class="letter"
+                :class="{selected: chosenLetter ===  'K'}"
                 tabindex="0"
                 role="button"
             >
@@ -200,7 +213,8 @@ function readyClipBoard() {
             <span
                 @click="showParks('L')"
                 @keyup.enter="showParks('L')"
-                class="letter"  
+                class="letter"
+                :class="{selected: chosenLetter ===  'L'}"
                 tabindex="0"
                 role="button"
             >
@@ -209,7 +223,8 @@ function readyClipBoard() {
             <span
                 @click="showParks('M')"
                 @keyup.enter="showParks('M')"
-                class="letter"  
+                class="letter"
+                :class="{selected: chosenLetter ===  'M'}"
                 tabindex="0"
                 role="button"
             >
@@ -218,7 +233,8 @@ function readyClipBoard() {
             <span
                 @click="showParks('N')"
                 @keyup.enter="showParks('N')"
-                class="letter"  
+                class="letter"
+                :class="{selected: chosenLetter ===  'N'}"
                 tabindex="0"
                 role="button"
             >
@@ -227,7 +243,8 @@ function readyClipBoard() {
             <span
                 @click="showParks('O')"
                 @keyup.enter="showParks('O')"
-                class="letter"  
+                class="letter"
+                :class="{selected: chosenLetter ===  'O'}"
                 tabindex="0"
                 role="button"
             >
@@ -236,7 +253,8 @@ function readyClipBoard() {
             <span
                 @click="showParks('P')"
                 @keyup.enter="showParks('P')"
-                class="letter"  
+                class="letter"
+                :class="{selected: chosenLetter ===  'P'}"
                 tabindex="0"
                 role="button"
             >
@@ -245,7 +263,8 @@ function readyClipBoard() {
             <span
                 @click="showParks('R')"
                 @keyup.enter="showParks('R')"
-                class="letter"  
+                class="letter"
+                :class="{selected: chosenLetter ===  'R'}"
                 tabindex="0"
                 role="button"
             >
@@ -254,7 +273,8 @@ function readyClipBoard() {
             <span
                 @click="showParks('S')"
                 @keyup.enter="showParks('S')"
-                class="letter"  
+                class="letter"
+                :class="{selected: chosenLetter ===  'S'}"
                 tabindex="0"
                 role="button"
             >
@@ -263,7 +283,8 @@ function readyClipBoard() {
             <span
                 @click="showParks('T')"
                 @keyup.enter="showParks('T')"
-                class="letter"  
+                class="letter"
+                :class="{selected: chosenLetter ===  'T'}"
                 tabindex="0"
                 role="button"
             >
@@ -272,7 +293,8 @@ function readyClipBoard() {
             <span
                 @click="showParks('V')"
                 @keyup.enter="showParks('V')"
-                class="letter"  
+                class="letter"
+                :class="{selected: chosenLetter ===  'V'}"
                 tabindex="0"
                 role="button"
             >
@@ -281,7 +303,8 @@ function readyClipBoard() {
             <span
                 @click="showParks('W')"
                 @keyup.enter="showParks('W')"
-                class="letter"  
+                class="letter"
+                :class="{selected: chosenLetter ===  'W'}"
                 tabindex="0"
                 role="button"
             >
@@ -290,7 +313,8 @@ function readyClipBoard() {
             <span
                 @click="showParks('Y')"
                 @keyup.enter="showParks('Y')"
-                class="letter"  
+                class="letter"
+                :class="{selected: chosenLetter ===  'Y'}"
                 tabindex="0"
                 role="button"
             >
@@ -299,14 +323,16 @@ function readyClipBoard() {
             <span
                 @click="showParks('Z')"
                 @keyup.enter="showParks('Z')"
-                class="letter"  
+                class="letter"
+                :class="{selected: chosenLetter ===  'Z'}"
                 tabindex="0"
                 role="button"
             >
                 Z
             </span>
         </div>
-        <div class="lookup-results">
+        <!-- Screen readers see div as clickable. tabindex -1 fixes issue. --> 
+        <div class="lookup-results" tabindex="-1">
             <ul>
                 <li v-for="chunkedSelect in chunkedSelects" :key="chunkedSelect.index">
                     <span class="copy-name">{{ chunkedSelect }}</span>

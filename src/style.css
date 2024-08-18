@@ -150,7 +150,7 @@ button:hover {
 }
 
 .btn-go:hover {
-    background: #bfc9c4; /* NV-80 */
+    background: #005141; /* P-30 */
 }
 
 .btn-clear {
@@ -336,7 +336,13 @@ button:hover {
 
 .letter:hover {
     cursor: pointer;
-    background: #d5dbd7; /* N-87 */
+    background: #c5e7ff; /* T-90 */
+    color: #001e2d; /* T-10 */
+}
+
+.selected {
+    background: #c5e7ff; /* T-90 */
+    color: #001e2d; /* T-10 */
 }
 
 .lookup-results {
