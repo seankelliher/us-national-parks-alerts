@@ -96,7 +96,7 @@ function readyClipBoard() {
 <template>
     <div class="lookup">
         <div class="lookup-title">
-            <h2>Full list park names</h2>
+            <p>Park names A to Z</p>
         </div>
         <!-- No park names begin with Q, U, X -->
         <div class="lookup-nav">
