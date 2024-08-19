@@ -88,12 +88,12 @@ https://www.nps.gov/media/photo/view.htm?id=A8F90883-5943-4629-800F-B27897CBD996
 ALERT CATEGORIES
 -------------------------
 
-Park Closure - #8b8559 (green)
+Park Closure - green
 
-Information - #0083ae (blue)
+Information - blue
 
-Caution - #fd7c00 (orange)
+Caution - orange
 
-Danger - #d71922 (red)
+Danger - red
 
-General - #d7c2b9 (tan)
+General - tan
