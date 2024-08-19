@@ -293,11 +293,9 @@ button:hover {
 }
 
 .lookup {
-    width: 80%;
-    margin: 2em 5%;
+    width: 90%;
+    margin: 0;
     padding: 1em 5%;
-    border-radius: 12px;
-    border: 2px solid #d5dbd7; /* N-87 */
     flex: initial;
     display: flex;
     flex-flow: row wrap;
@@ -316,13 +314,13 @@ button:hover {
     width: 100%;
     margin: 0;
     padding: 0.25em 0;
-    border: 1px solid #d5dbd7; /* N-87 */
+    border-top: 1px solid #d5dbd7; /* N-87 */
+    border-bottom: 1px solid #d5dbd7; /* N-87 */
     flex: initial;
     display: flex;
     flex-flow: row wrap;
     justify-content: center; /* main axis */
     align-items: flex-start; /* cross axis */
-    box-shadow: 0 4px 4px #d5dbd7; /* N-87 */
 }
 
 /* Span class for list of letters, A, B, C, etc. */
@@ -336,13 +334,11 @@ button:hover {
 
 .letter:hover {
     cursor: pointer;
-    background: #c5e7ff; /* T-90 */
-    color: #001e2d; /* T-10 */
+    background: #dee4e0; /* N-90 */
 }
 
 .selected {
-    background: #c5e7ff; /* T-90 */
-    color: #001e2d; /* T-10 */
+    background: #dee4e0; /* N-90 */
 }
 
 .lookup-results {
@@ -356,8 +352,6 @@ button:hover {
     width: 100%;
     margin: 0;
     padding: 0;
-    background: #e9efeb; /* N-94 */
-    border-radius: 12px;
     flex: initial;
     display: flex;
     flex-flow: row wrap;
@@ -505,25 +499,30 @@ aside {
     }
 }
 
-/* Background colors for badges */
+/* Background colors for badges, with h3 font */
 .closure {
-    background: #baad37; /* green */
+    background: #d3c972; /* green */
+    color: #363100; /* dark green */
 }
 
 .info {
-    background: #76d1ff; /* blue */
+    background: #8ecff2; /* blue */
+    color: #003548; /* dark blue */
 }
 
 .caution {
-    background: #ff8d3b; /* orange */
+    background: #ffb689; /* orange */
+    color: #512300; /* dark orange */
 }
 
 .danger {
-    background: #ff897f; /* red */
+    background: #ffb4ac; /* red */
+    color: #561e1a; /* dark red */
 }
 
 .general {
-    background: #d7c2b9; /* tan */
+    background: #dee4e0; /* N-90 */
+    color: #171d1b; /* N-10 */
 }
 
 .alert-text {
@@ -574,7 +573,6 @@ h3 {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     line-height: 1.3;
     font-weight: 500;
-    color: #171d1b; /* N-10 */
     text-transform: uppercase;
     margin-top: 0.4em;
     margin-bottom: 0.4em;
@@ -653,19 +651,19 @@ ul {
 /* Keeps pagination prev & next steady as user flips pages */
 @media (min-width: 300px) and (max-width: 399px) {
     ul {
-        min-height: 368px;
+        min-height: 325px;
     }
 }
 
 @media (min-width: 400px) and (max-width: 499px) {
     ul {
-        min-height: 303px;
+        min-height: 276px;
     }
 }
 
 @media (min-width: 500px) and (max-width: 599px) {
     ul {
-        min-height: 224px;
+        min-height: 252px;
     }
 }
 
@@ -677,19 +675,13 @@ ul {
 
 @media (min-width: 700px) and (max-width: 799px) {
     ul {
-        min-height: 240px;
-    }
-}
-
-@media (min-width: 800px) and (max-width: 843px) {
-    ul {
         min-height: 210px;
     }
 }
 
-@media (min-width: 844px) {
+@media (min-width: 800px) {
     ul {
-        min-height: 184px;
+        min-height: 180px;
     }
 }
 
