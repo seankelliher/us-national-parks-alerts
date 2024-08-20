@@ -94,7 +94,7 @@ form {
     flex: initial;
     display: flex;
     flex-flow: row wrap;
-    justify-content: flex-start; /* main axis */
+    justify-content: center; /* main axis */
     align-items: center; /* cross axis */
     position: relative;
 }
@@ -295,7 +295,7 @@ button:hover {
 .lookup {
     width: 90%;
     margin: 0;
-    padding: 1em 5%;
+    padding: 0 5%;
     flex: initial;
     display: flex;
     flex-flow: row wrap;
@@ -307,15 +307,23 @@ button:hover {
     width: 100%;
     margin: 0;
     padding: 0;
+    text-align: center;
     flex: initial;
+    position: relative;
+}
+
+.lookup-title::before {
+    content: "";
+    position: absolute;
+    inset: 0 calc((100vw - 100%) / -2) -1px calc((100vw - 100%) / -2); /* shorthand top, right, bottom, left */
+    border-top: 1px solid #d5dbd7; /* N-87 */
+    z-index: -1;
 }
 
 .lookup-nav {
     width: 100%;
     margin: 0;
     padding: 0.25em 0;
-    border-top: 1px solid #d5dbd7; /* N-87 */
-    border-bottom: 1px solid #d5dbd7; /* N-87 */
     flex: initial;
     display: flex;
     flex-flow: row wrap;
@@ -360,56 +368,13 @@ button:hover {
 }
 
 section {
+    width: 90%;
     margin: 0;
-    flex: initial;
-}
-
-@media (min-width: 300px) and (max-width: 799px) {
-    section {
-        width: 90%;
-        padding: 0 5%;
-    }
-}
-
-@media (min-width: 800px) {
-    section {
-        width: 35%;
-        padding: 0 0 0 5%;
-    }
-}
-
-aside {
-    width: 50%;
-    margin: 0;
+    padding: 0 5%;
     flex: initial;
     display: flex;
     flex-flow: row wrap;
-    justify-content: flex-start; /* main axis */
-    align-items: flex-start; /* cross axis */
-}
-
-@media (min-width: 300px) and (max-width: 799px) {
-    aside {
-        width: 90%;
-        padding: 0 5%;
-    }
-}
-
-@media (min-width: 800px) {
-    aside {
-        width: 50%;
-        padding: 0 5%;
-    }
-}
-
-.list {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    flex: initial;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: flex-start; /* main axis */
+    justify-content: center; /* main axis */
     align-items: flex-start; /* cross axis */
 }
 
@@ -418,6 +383,173 @@ aside {
     margin: 0;
     padding: 0;
     flex: initial;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center; /* main axis */
+    align-items: flex-start; /* cross axis */
+}
+
+dl {
+    margin: 0;
+    padding: 0 0 1em;
+}
+
+@media (min-width: 300px) and (max-width: 399px) {
+    dl {
+        width: 90%;
+    }
+}
+
+@media (min-width: 400px) and (max-width: 499px) {
+    dl {
+        width: 85%;
+    }
+}
+
+@media (min-width: 500px) and (max-width: 599px) {
+    dl {
+        width: 80%;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 699px) {
+    dl {
+        width: 75%;
+    }
+}
+
+@media (min-width: 700px) and (max-width: 799px) {
+    dl {
+        width: 70%;
+    }
+}
+
+@media (min-width: 800px) and (max-width: 899px) {
+    dl {
+        width: 65%;
+    }
+}
+
+@media (min-width: 900px) and (max-width: 999px) {
+    dl {
+        width: 60%;
+    }
+}
+
+@media (min-width: 1000px) and (max-width: 1099px) {
+    dl {
+        width: 55%;
+    }
+}
+
+@media (min-width: 1100px) and (max-width: 1199px) {
+    dl {
+        width: 50%;
+    }
+}
+
+@media (min-width: 1200px) {
+    dl {
+        width: 45%;
+    }
+}
+
+dd {
+    margin: 0 0 1em; /* longhand 0 0 1em 0 */
+    padding: 0.5em 0;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 500;
+    color: #001e2d; /* T-10 */
+    background: #c5e7ff; /* T-90 */
+    border-radius: 12px;
+    text-align: center;
+}
+
+dd:hover {
+    cursor: pointer;
+    background: #91cef4; /* T-80 */
+}
+
+aside {
+    width: 90%;
+    margin: 0;
+    padding: 0 5%;
+    flex: initial;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center; /* main axis */
+    align-items: flex-start; /* cross axis */
+}
+
+.list {
+    margin: 0;
+    padding: 0;
+    flex: initial;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start; /* main axis */
+    align-items: flex-start; /* cross axis */
+}
+
+@media (min-width: 300px) and (max-width: 399px) {
+    .list {
+        width: 100%;
+    }
+}
+
+@media (min-width: 400px) and (max-width: 499px) {
+    .list {
+        width: 95%;
+    }
+}
+
+@media (min-width: 500px) and (max-width: 599px) {
+    .list {
+        width: 90%;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 699px) {
+    .list {
+        width: 85%;
+    }
+}
+
+@media (min-width: 700px) and (max-width: 799px) {
+    .list {
+        width: 80%;
+    }
+}
+
+@media (min-width: 800px) and (max-width: 899px) {
+    .list {
+        width: 75%;
+    }
+}
+
+@media (min-width: 900px) and (max-width: 999px) {
+    .list {
+        width: 70%;
+    }
+}
+
+@media (min-width: 1000px) and (max-width: 1099px) {
+    .list {
+        width: 65%;
+    }
+}
+
+@media (min-width: 1100px) and (max-width: 1199px) {
+    .list {
+        width: 60%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .list {
+        width: 55%;
+    }
 }
 
 .alert {
@@ -617,29 +749,6 @@ label {
     line-height: 1.2;
     font-weight: 500;
     color: #171d1b; /* N-10 */
-}
-
-dl {
-    width: 100%;
-    margin: 1em 0;
-    padding: 0;
-}
-
-dd {
-    margin: 0 0 1em; /* longhand 0 0 1em 0 */
-    padding: 0.5em 0;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    line-height: 1.5;
-    font-weight: 500;
-    color: #001e2d; /* T-10 */
-    background: #c5e7ff; /* T-90 */
-    border-radius: 12px;
-    text-align: center;
-}
-
-dd:hover {
-    cursor: pointer;
-    background: #91cef4; /* T-80 */
 }
 
 ul {
