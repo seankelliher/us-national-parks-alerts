@@ -11,7 +11,7 @@ defineEmits(["runSearchTerm", "clearSearchTerm"]);
             id="search-park-name"
             type="text"
             v-model="searchTerm"
-            placeholder="Acadia"
+            placeholder="Enter a park name"
         >
         <button
             type="submit"
