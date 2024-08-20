@@ -106,37 +106,32 @@ watch(parkAlerts, () => {
         @clear-search-term="clearSearchTerm"
     />
 
-    <section>
-        <div
-            v-if="store.listParks"
-            class="list"
-        >
+    <section v-if="store.listParks">
         <div class="results-notice">
             <p v-if="selectedParks.length === 0 && searchTerm !== ''">No results.</p>
             <p class="error-msg">{{ errorMsg }}</p>
         </div>
-            <dl id="list-of-parks">
-                <template v-for="sp in selectedParks" :key="parks[sp].parkCode">
-                    <dd
-                        :id="parks[sp].parkCode"
-                        tabindex="0"
-                        role="button"
-                        @click="[
-                            setParkForAlert($event.target.id),
-                            setParkForAlertFullName($event.target.id),
-                            clearErrorMsg()
-                        ]"
-                        @keyup.enter="[
-                            setParkForAlert($event.target.id),
-                            setParkForAlertFullName($event.target.id),
-                            clearErrorMsg()
-                        ]"
-                    >
-                        {{ parks[sp].fullName }}
-                    </dd>
-                </template>
-            </dl>
-        </div>
+        <dl id="list-of-parks" v-if="selectedParks.length !== 0">
+            <template v-for="sp in selectedParks" :key="parks[sp].parkCode">
+                <dd
+                    :id="parks[sp].parkCode"
+                    tabindex="0"
+                    role="button"
+                    @click="[
+                        setParkForAlert($event.target.id),
+                        setParkForAlertFullName($event.target.id),
+                        clearErrorMsg()
+                    ]"
+                    @keyup.enter="[
+                        setParkForAlert($event.target.id),
+                        setParkForAlertFullName($event.target.id),
+                        clearErrorMsg()
+                    ]"
+                >
+                    {{ parks[sp].fullName }}
+                </dd>
+            </template>
+        </dl>
     </section>
 
     <aside>
