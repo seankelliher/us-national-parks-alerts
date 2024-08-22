@@ -345,7 +345,8 @@ button:hover {
     background: #dee4e0; /* N-90 */
 }
 
-.selected {
+/* Used for selected letters like A, B, C, etc. */
+.selected1 {
     background: #dee4e0; /* N-90 */
 }
 
@@ -468,6 +469,11 @@ dd {
 
 dd:hover {
     cursor: pointer;
+    background: #91cef4; /* T-80 */
+}
+
+/* Used for selected park buttons like "Acadia National Park" */
+.selected2 {
     background: #91cef4; /* T-80 */
 }
 
