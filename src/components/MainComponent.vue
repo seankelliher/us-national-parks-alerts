@@ -127,6 +127,7 @@ watch(parkAlerts, () => {
                         setParkForAlertFullName($event.target.id),
                         clearErrorMsg()
                     ]"
+                    :class="{selected2: parkForAlert === parks[sp].parkCode}"
                 >
                     {{ parks[sp].fullName }}
                 </dd>
