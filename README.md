@@ -5,14 +5,14 @@ Searchable directory for alerts at National Park Service (NPS) parks in the US a
 
 ## Project Status
 
-TESTING: After making some renovations, I am testing: looking for bugs, accessibility issues, and usability issues.
+Project meets general accessibility (WACG) and cross-browser requirements. More testing with a dedicated services (e.g., Sauce Labs) would be helpful if deploying to production.
 
 ## Project Screen Shots
 
 * Starting view.
 ![screen shot of project](/screenshots/us-national-parks-alerts-screenshot1.png?s=600)
 
-* Alerts for Great Smoky Mountains National Park.
+* Alerts for Acadia National Park.
 ![screen shot of project](/screenshots/us-national-parks-alerts-screenshot2.png?s=600)
 
 ## Installation and Setup Instructions
