@@ -104,7 +104,7 @@ function readyClipBoard() {
                 @click="showParks('A')"
                 @keyup.enter="showParks('A')"
                 class="letter"
-                :class="{selected: chosenLetter ===  'A'}"
+                :class="{selected1: chosenLetter ===  'A'}"
                 tabindex="0"
                 role="button"
             >
@@ -114,7 +114,7 @@ function readyClipBoard() {
                 @click="showParks('B')"
                 @keyup.enter="showParks('B')"
                 class="letter"
-                :class="{selected: chosenLetter ===  'B'}"
+                :class="{selected1: chosenLetter ===  'B'}"
                 tabindex="0"
                 role="button"
             >
@@ -124,7 +124,7 @@ function readyClipBoard() {
                 @click="showParks('C')"
                 @keyup.enter="showParks('C')"
                 class="letter"
-                :class="{selected: chosenLetter ===  'C'}"
+                :class="{selected1: chosenLetter ===  'C'}"
                 tabindex="0"
                 role="button"
             >
@@ -134,7 +134,7 @@ function readyClipBoard() {
                 @click="showParks('D')"
                 @keyup.enter="showParks('D')"
                 class="letter"
-                :class="{selected: chosenLetter ===  'D'}"
+                :class="{selected1: chosenLetter ===  'D'}"
                 tabindex="0"
                 role="button"
             >
@@ -144,7 +144,7 @@ function readyClipBoard() {
                 @click="showParks('E')"
                 @keyup.enter="showParks('E')"
                 class="letter"
-                :class="{selected: chosenLetter ===  'E'}"
+                :class="{selected1: chosenLetter ===  'E'}"
                 tabindex="0"
                 role="button"
             >
@@ -154,7 +154,7 @@ function readyClipBoard() {
                 @click="showParks('F')"
                 @keyup.enter="showParks('F')"
                 class="letter"
-                :class="{selected: chosenLetter ===  'F'}"
+                :class="{selected1: chosenLetter ===  'F'}"
                 tabindex="0"
                 role="button"
             >
@@ -164,7 +164,7 @@ function readyClipBoard() {
                 @click="showParks('G')"
                 @keyup.enter="showParks('G')"
                 class="letter"
-                :class="{selected: chosenLetter ===  'G'}"
+                :class="{selected1: chosenLetter ===  'G'}"
                 tabindex="0"
                 role="button"
             >
@@ -174,7 +174,7 @@ function readyClipBoard() {
                 @click="showParks('H')"
                 @keyup.enter="showParks('H')"
                 class="letter"
-                :class="{selected: chosenLetter ===  'H'}"
+                :class="{selected1: chosenLetter ===  'H'}"
                 tabindex="0"
                 role="button"
             >
@@ -184,7 +184,7 @@ function readyClipBoard() {
                 @click="showParks('I')"
                 @keyup.enter="showParks('I')"
                 class="letter"
-                :class="{selected: chosenLetter ===  'I'}"
+                :class="{selected1: chosenLetter ===  'I'}"
                 tabindex="0"
                 role="button"
             >
@@ -194,7 +194,7 @@ function readyClipBoard() {
                 @click="showParks('J')"
                 @keyup.enter="showParks('J')"
                 class="letter"
-                :class="{selected: chosenLetter ===  'J'}"
+                :class="{selected1: chosenLetter ===  'J'}"
                 tabindex="0"
                 role="button"
             >
@@ -204,7 +204,7 @@ function readyClipBoard() {
                 @click="showParks('K')"
                 @keyup.enter="showParks('K')"
                 class="letter"
-                :class="{selected: chosenLetter ===  'K'}"
+                :class="{selected1: chosenLetter ===  'K'}"
                 tabindex="0"
                 role="button"
             >
@@ -214,7 +214,7 @@ function readyClipBoard() {
                 @click="showParks('L')"
                 @keyup.enter="showParks('L')"
                 class="letter"
-                :class="{selected: chosenLetter ===  'L'}"
+                :class="{selected1: chosenLetter ===  'L'}"
                 tabindex="0"
                 role="button"
             >
@@ -224,7 +224,7 @@ function readyClipBoard() {
                 @click="showParks('M')"
                 @keyup.enter="showParks('M')"
                 class="letter"
-                :class="{selected: chosenLetter ===  'M'}"
+                :class="{selected1: chosenLetter ===  'M'}"
                 tabindex="0"
                 role="button"
             >
@@ -234,7 +234,7 @@ function readyClipBoard() {
                 @click="showParks('N')"
                 @keyup.enter="showParks('N')"
                 class="letter"
-                :class="{selected: chosenLetter ===  'N'}"
+                :class="{selected1: chosenLetter ===  'N'}"
                 tabindex="0"
                 role="button"
             >
@@ -244,7 +244,7 @@ function readyClipBoard() {
                 @click="showParks('O')"
                 @keyup.enter="showParks('O')"
                 class="letter"
-                :class="{selected: chosenLetter ===  'O'}"
+                :class="{selected1: chosenLetter ===  'O'}"
                 tabindex="0"
                 role="button"
             >
@@ -254,7 +254,7 @@ function readyClipBoard() {
                 @click="showParks('P')"
                 @keyup.enter="showParks('P')"
                 class="letter"
-                :class="{selected: chosenLetter ===  'P'}"
+                :class="{selected1: chosenLetter ===  'P'}"
                 tabindex="0"
                 role="button"
             >
@@ -264,7 +264,7 @@ function readyClipBoard() {
                 @click="showParks('R')"
                 @keyup.enter="showParks('R')"
                 class="letter"
-                :class="{selected: chosenLetter ===  'R'}"
+                :class="{selected1: chosenLetter ===  'R'}"
                 tabindex="0"
                 role="button"
             >
@@ -274,7 +274,7 @@ function readyClipBoard() {
                 @click="showParks('S')"
                 @keyup.enter="showParks('S')"
                 class="letter"
-                :class="{selected: chosenLetter ===  'S'}"
+                :class="{selected1: chosenLetter ===  'S'}"
                 tabindex="0"
                 role="button"
             >
@@ -284,7 +284,7 @@ function readyClipBoard() {
                 @click="showParks('T')"
                 @keyup.enter="showParks('T')"
                 class="letter"
-                :class="{selected: chosenLetter ===  'T'}"
+                :class="{selected1: chosenLetter ===  'T'}"
                 tabindex="0"
                 role="button"
             >
@@ -294,7 +294,7 @@ function readyClipBoard() {
                 @click="showParks('V')"
                 @keyup.enter="showParks('V')"
                 class="letter"
-                :class="{selected: chosenLetter ===  'V'}"
+                :class="{selected1: chosenLetter ===  'V'}"
                 tabindex="0"
                 role="button"
             >
@@ -304,7 +304,7 @@ function readyClipBoard() {
                 @click="showParks('W')"
                 @keyup.enter="showParks('W')"
                 class="letter"
-                :class="{selected: chosenLetter ===  'W'}"
+                :class="{selected1: chosenLetter ===  'W'}"
                 tabindex="0"
                 role="button"
             >
@@ -314,7 +314,7 @@ function readyClipBoard() {
                 @click="showParks('Y')"
                 @keyup.enter="showParks('Y')"
                 class="letter"
-                :class="{selected: chosenLetter ===  'Y'}"
+                :class="{selected1: chosenLetter ===  'Y'}"
                 tabindex="0"
                 role="button"
             >
@@ -324,7 +324,7 @@ function readyClipBoard() {
                 @click="showParks('Z')"
                 @keyup.enter="showParks('Z')"
                 class="letter"
-                :class="{selected: chosenLetter ===  'Z'}"
+                :class="{selected1: chosenLetter ===  'Z'}"
                 tabindex="0"
                 role="button"
             >
