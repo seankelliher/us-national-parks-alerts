@@ -5,45 +5,49 @@ import { parks } from "../data/parks-list.js";
 import { store } from "../store.js";
 
 const searchTerm = ref("");
-const selectedParks = ref([]);
-const parkForAlert = ref("");
-const parkForAlertFullName = ref("");
-const parkAlerts = ref([]);
+const searchResults = ref([]);
+const selectedPark = ref("");
+const selectedParkFullName = ref("");
+const selectedParkAlerts = ref([]);
 const errorMsg = ref("");
+const resultsMsg = ref("");
 
 function runSearchTerm() {
     if (searchTerm.value === "") {
         errorMsg.value = "Please enter a search term.";
     } else {
         errorMsg.value = "";
-        parkForAlert.value = ""; // Allows alerts if user runs search & clicks park, then runs search and clicks same park again - back to back.
-        selectedParks.value.length = 0;
+        resultsMsg.value = "";
+        selectedPark.value = ""; // In case user selects same park back to back. Watcher needs change to fetch alerts.
+        searchResults.value.length = 0;
         parks.map((park)=> {
             if (park.fullName.toLowerCase().includes(searchTerm.value.toLowerCase())) {
-                selectedParks.value.push(parks.indexOf(park));
+                searchResults.value.push(parks.indexOf(park));
             } else if (park.altName.toLowerCase().includes(searchTerm.value.toLowerCase())) {
-                selectedParks.value.push(parks.indexOf(park));
+                searchResults.value.push(parks.indexOf(park));
             }
         });
         store.displayListParks(true);
         store.displayListAlerts(false);
     }
+    if (searchResults.value.length === 0 && searchTerm.value !== "") {
+        resultsMsg.value = "No results";
+    }
 }
 
 function clearSearchTerm() {
     errorMsg.value = "";
+    resultsMsg.value = "";
     searchTerm.value = "";
-    parkForAlert.value = "";
+    selectedPark.value = "";
     store.displayListParks(false);
     store.displayListAlerts(false);
 }
 
-function clearErrorMsg() {
-    errorMsg.value = "";
-}
-
-function setParkForAlert(pk) {
-    parkForAlert.value = pk;
+function setSelectedPark(pk) {
+    errorMsg.value = ""; // Just in case message present from previous click.
+    resultsMsg.value = "Getting alerts from NPS. This may take a minute.";
+    selectedPark.value = pk;
 }
 
 function setBadgeType(bdg) {
@@ -60,10 +64,10 @@ function setBadgeType(bdg) {
     }
 }
 
-function setParkForAlertFullName(sp) {
+function setSelectedParkFullName(sp) {
     const selected = document.getElementById(sp);
     const text = selected.textContent;
-    parkForAlertFullName.value = text;
+    selectedParkFullName.value = text;
 }
 
 function formatDate(dt) {
@@ -71,11 +75,11 @@ function formatDate(dt) {
     return date.toDateString();
 }
 
-watch(parkForAlert, (newValue) => {
+watch(selectedPark, (newValue) => {
     if (newValue !== "") {
         // Using locally -> http://localhost:4040/alerts
         // Using remotely -> /alerts
-        fetch(`/alerts/${parkForAlert.value}`)
+        fetch(`/alerts/${selectedPark.value}`)
             .then((response) => {
                 if (response.ok) {
                     return response.json();
@@ -84,17 +88,19 @@ watch(parkForAlert, (newValue) => {
                 }
             })
             .then((data) => {
-                console.log(data);
-                parkAlerts.value = data;
+                // console.log(data);
+                selectedParkAlerts.value = data;
+                resultsMsg.value = `Alerts: ${selectedParkAlerts.value.total} for ${selectedParkFullName.value}`;
             })
             .catch((error) => {
                 console.log(error);
+                resultsMsg.value = ""; // Removes "loading" message.
                 errorMsg.value = error;
             });
     }
 });
 
-watch(parkAlerts, () => {
+watch(selectedParkAlerts, () => {
     store.displayListAlerts(true);
 });
 </script>
@@ -106,28 +112,27 @@ watch(parkAlerts, () => {
         @clear-search-term="clearSearchTerm"
     />
 
+    <div class="results-notice">
+        <p>{{ resultsMsg }}</p>
+        <p class="error-msg">{{ errorMsg }}</p>
+    </div>
+
     <section v-if="store.listParks">
-        <div class="results-notice">
-            <p v-if="selectedParks.length === 0 && searchTerm !== ''">No results.</p>
-            <p class="error-msg">{{ errorMsg }}</p>
-        </div>
-        <dl id="list-of-parks" v-if="selectedParks.length !== 0">
-            <template v-for="sp in selectedParks" :key="parks[sp].parkCode">
+        <dl id="list-of-parks" v-if="searchResults.length !== 0">
+            <template v-for="sp in searchResults" :key="parks[sp].parkCode">
                 <dd
                     :id="parks[sp].parkCode"
                     tabindex="0"
                     role="button"
                     @click="[
-                        setParkForAlert($event.target.id),
-                        setParkForAlertFullName($event.target.id),
-                        clearErrorMsg()
+                        setSelectedPark($event.target.id),
+                        setSelectedParkFullName($event.target.id),
                     ]"
                     @keyup.enter="[
-                        setParkForAlert($event.target.id),
-                        setParkForAlertFullName($event.target.id),
-                        clearErrorMsg()
+                        setSelectedPark($event.target.id),
+                        setSelectedParkFullName($event.target.id),
                     ]"
-                    :class="{selected2: parkForAlert === parks[sp].parkCode}"
+                    :class="{selected2: selectedPark === parks[sp].parkCode}"
                 >
                     {{ parks[sp].fullName }}
                 </dd>
@@ -138,13 +143,10 @@ watch(parkAlerts, () => {
     <aside>
         <div
             v-if="store.listAlerts"
-            class="list"
+            class="list-of-alerts"
         >
-            <div class="results-notice">
-                <p>Alerts: {{ parkAlerts.total }} for {{ parkForAlertFullName }}</p>
-            </div>
             <div
-                v-for="alert in parkAlerts.data"
+                v-for="alert in selectedParkAlerts.data"
                 class="alert"
                 :key="alert.id"
             >
