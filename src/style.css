@@ -1,3 +1,11 @@
+/* @link https://utopia.fyi/type/calculator?c=320,12,1.125,1280,18,1.125,2,1,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+:root {
+    --fs-1: clamp(0.6667rem, 0.5556rem + 0.5556vw, 1rem);
+    --fs0: clamp(0.75rem, 0.625rem + 0.625vw, 1.125rem);
+    --fs1: clamp(0.8438rem, 0.7031rem + 0.7031vw, 1.2656rem);
+    --fs2: clamp(0.9492rem, 0.791rem + 0.791vw, 1.4238rem);
+}
+
 /* Stylesheet uses Level 3 Media Queries. Level 4 coverage still spotty. */
 body {
     margin-top: 0;
@@ -54,9 +62,12 @@ header::before {
 .pano-title {
     margin: 0;
     padding: 0 0.75em;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Roboto Condensed", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-size: var(--fs1);
     line-height: 1.8;
-    font-weight: 500;
     color: #ecf2ee; /* N-95 */
     border: 1px solid #ecf2ee; /* N-95 */
     position: absolute;
@@ -109,11 +120,19 @@ form::before {
     z-index: -1;
 }
 
+input {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: var(--fs0);
+    line-height: 1.5;
+}
+
 @media (min-width: 300px) and (max-width: 699px) {
     input {
         width: 95%;
         margin: 0.75em 0;
-        padding: 0.25em 2.5%;
+        padding: 0 2.5%;
     }
 }
 
@@ -121,7 +140,7 @@ form::before {
     input {
         width: 45%;
         margin: 0.75em 2.5% 0.75em 0;
-        padding: 0.25em 2.5%;
+        padding: 0 2.5%;
     }
 }
 
@@ -134,9 +153,12 @@ button {
     margin-right: 2.5%;
     padding: 0;
     border-radius: 8px;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Roboto Condensed", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-size: var(--fs0);
     line-height: 1.8;
-    font-weight: 500;
 }
 
 button:hover {
@@ -306,7 +328,7 @@ button:hover {
 .lookup-title {
     width: 100%;
     margin: 0;
-    padding: 0;
+    padding-top: 1em;
     text-align: center;
     flex: initial;
     position: relative;
@@ -334,9 +356,12 @@ button:hover {
 /* Span class for list of letters, A, B, C, etc. */
 .letter {
     padding: 0 0.5em;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Roboto Condensed", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-size: var(--fs0);
     line-height: 1.5;
-    font-weight: 400;
     color: #171d1b; /* N-10 */
 }
 
@@ -458,9 +483,12 @@ dl {
 dd {
     margin: 0 0 1em; /* longhand 0 0 1em 0 */
     padding: 0.5em 0;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Roboto Condensed", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-size: var(--fs-1);
     line-height: 1.5;
-    font-weight: 500;
     color: #001e2d; /* T-10 */
     background: #c5e7ff; /* T-90 */
     border-radius: 12px;
@@ -693,24 +721,33 @@ footer::before {
 
 /* Font styles and their media queries */
 h1 {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Roboto Condensed", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-size: var(--fs2);
     line-height: 1.5;
-    font-weight: 600;
     color: #fff; /* N-100 */
 }
 
 h2 {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Roboto Condensed", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-size: var(--fs2);
     line-height: 1.5;
-    font-weight: 600;
     color: #171d1b; /* N-10 */
 }
 
 /* Types of alerts -> Info, Park Closure, etc. */
 h3 {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Roboto Condensed", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-size: var(--fs-1);
     line-height: 1.3;
-    font-weight: 500;
     text-transform: uppercase;
     margin-top: 0.4em;
     margin-bottom: 0.4em;
@@ -718,16 +755,21 @@ h3 {
 
 /* Titles in alert boxes */
 h4 {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Roboto Condensed", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-size: var(--fs-1);
     line-height: 1.5;
-    font-weight: 500;
     color: #171d1b; /* N-10 */
 }
 
 p {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    line-height: 1.8;
+    font-family: "Roboto", sans-serif;
     font-weight: 400;
+    font-style: normal;
+    font-size: var(--fs0);
+    line-height: 1.8;
     color: #171d1b; /* N-10 */
 }
 
@@ -751,9 +793,12 @@ p {
 label {
     margin-right: 2.5%;
     padding: 0;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Roboto Condensed", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-size: var(--fs0);
     line-height: 1.2;
-    font-weight: 500;
     color: #171d1b; /* N-10 */
 }
 
@@ -801,9 +846,11 @@ ul {
 }
 
 li {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    line-height: 1.8;
+    font-family: "Roboto", sans-serif;
     font-weight: 400;
+    font-style: normal;
+    font-size: var(--fs-0);
+    line-height: 1.8;
     color: #171d1b; /* N-10 */
 
 }
@@ -842,77 +889,4 @@ li {
 
 .fades {
     animation: fade-in-out 1s ease-out;
-}
-
-/* Media queries for fonts */
-@media (min-width: 300px) and (max-width: 399px) {
-    p, label, input::placeholder, input[type="text"], dd, li, button {
-        font-size: 0.875em; /* 14px */
-    }
-
-    h1 {
-        font-size: 1.125em; /* 18 px */
-    }
-
-    h3 {
-        font-size: 0.875em; /* 14px */
-    }
-
-    h2, h4, .pano-title, .letter {
-        font-size: 1em; /* 16px */
-    }
-}
-
-@media (min-width: 400px) and (max-width: 499px) {
-    p, label, input::placeholder, input[type="text"], dd, li, button {
-        font-size: 0.9375em; /* 15px */
-    }
-
-    h1 {
-        font-size: 1.1875em; /* 19px */
-    }
-
-    h3 {
-        font-size: 0.9375em; /* 15px */
-    }
-
-    h2, h4, .pano-title, .letter {
-        font-size: 1.0625em; /* 17px */
-    }
-}
-
-@media (min-width: 500px) and (max-width: 599px) {
-    p, label, input::placeholder, input[type="text"], dd, li, button {
-        font-size: 1em; /* 16px */
-    }
-
-    h1 {
-        font-size: 1.25em; /* 20px */
-    }
-
-    h3 {
-        font-size: 1em; /* 16px */
-    }
-
-    h2, h4, .pano-title, .letter {
-        font-size: 1.125em; /* 18 px */
-    }
-}
-
-@media (min-width: 600px) {
-    p, label, input::placeholder, input[type="text"], dd, li, button {
-        font-size: 1.0625em; /* 17px */
-    }
-
-    h1 {
-        font-size: 1.3125em; /* 21px */
-    }
-
-    h3 {
-        font-size: 0.875em; /* 14px */
-    }
-
-    h2, h4, .pano-title, .letter {
-        font-size: 1.1875em; /* 19px */
-    }
 }
