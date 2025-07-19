@@ -354,7 +354,7 @@ function readyClipBoard() {
                 tabindex="0"
                 role="button"
             >
-                previous
+                Previous
             </p>
             <p class="paginate">{{ currentPage }} of {{ totalPages }}</p>
             <p
@@ -364,7 +364,7 @@ function readyClipBoard() {
                 tabindex="0"
                 role="button"
             >
-                next
+                Next
             </p>
         </div>
     </div>
