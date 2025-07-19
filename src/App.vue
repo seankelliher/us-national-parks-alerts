@@ -11,8 +11,8 @@ import FooterNotes from "./components/FooterNotes.vue";
     <div id="container">
         <HeaderTitle title="National Park Service" />
         <ImagePano />
-        <OverviewBoxes />
         <MainComponent />
+        <OverviewBoxes />
         <LookupBox />
         <FooterNotes />
     </div>
