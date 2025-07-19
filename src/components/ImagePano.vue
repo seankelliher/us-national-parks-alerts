@@ -10,7 +10,9 @@
             >
             <figcaption hidden>The Alaska Range. Photo: National Park Service.</figcaption>
         </figure>
-        <div class="pano-title">Park Alerts</div>
+        <div class="pano-title">
+            <h2>NPS Park Alerts</h2>
+        </div>
     </div>
 </template>
 
