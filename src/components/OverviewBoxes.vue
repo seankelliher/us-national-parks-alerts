@@ -4,14 +4,14 @@
 <template>
     <div class="overview-boxes">
         <div class="overview-about">
-            <h2>Before you travel</h2>
-            <p>The National Park Service provides alerts on conditions in its over 470 areas in the United States, District of Columbia, and overseas territories - American Samoa, Guam, Northern Mariana Islands, Puerto Rico, the U.S. Minor Outlying Islands, and the U.S. Virgin Islands. Check before you travel.</p>
+            <!--<h2>Before you travel</h2>-->
+            <p><span class="emphasis">The National Park Service provides alerts on conditions in its over 470 areas</span> in the United States, District of Columbia, and overseas territories - American Samoa, Guam, Northern Mariana Islands, Puerto Rico, the U.S. Minor Outlying Islands, and the U.S. Virgin Islands.</p>
         </div>
 
         <div class="overview-alert">
             <div class="alert-text">
-                <h2>Alert types</h2>
-                <p>Park alerts are categorized into four types. Park Closures can be for an entire park or part of a park. Caution and Danger are often for weather events such as flooding, storms, landslides, or fires.</p>
+            <!--<h2>Alert types</h2>-->
+                <p><span class="emphasis">Park alerts are categorized into four types.</span> Park Closures can be for all or part of a park. Caution and Danger are often for weather events such as flooding, storms, landslides, or fires.</p>
             </div>
 
             <div class="overview-alert-type">
