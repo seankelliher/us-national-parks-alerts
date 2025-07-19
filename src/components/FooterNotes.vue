@@ -3,7 +3,7 @@
 
 <template>
     <footer>
-        <p class="white-txt">National Park Service<br />1849 C Street NW<br />Washington, DC 20240</p>
+        <p class="white-txt">National Park Service headquarters are in Washington, DC</p>
     </footer>
 </template>
 
