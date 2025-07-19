@@ -6,13 +6,14 @@ defineEmits(["runSearchTerm", "clearSearchTerm"]);
 
 <template>
     <form @submit.prevent="onSubmit">
-        <label for="search-park-name">Find alerts</label>
+        <label for="search-park-name">Search by park name</label>
         <input
             id="search-park-name"
             type="text"
             v-model="searchTerm"
-            placeholder="Enter a park name"
+            placeholder="Acadia National Park"
         >
+
         <button
             type="submit"
             @click="$emit('runSearchTerm', searchTerm)"
