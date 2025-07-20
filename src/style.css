@@ -529,7 +529,7 @@ aside {
     width: 90%;
     margin: 1em 0;
     padding: 1em 5%;
-    background: #ebeef3; /* Surface container */
+    background: #f1f4f9; /* Surface container low */
     border-radius: 12px;
     flex: initial;
     display: flex;
@@ -552,6 +552,7 @@ aside {
 .badge {
     margin: 0;
     padding: 0;
+    border-radius: 6px;
     text-align: center;
     flex: initial;
 }
