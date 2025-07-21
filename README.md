@@ -12,7 +12,7 @@ Project meets general accessibility (WACG) and cross-browser requirements. More 
 * Starting view.
 ![screen shot of project](/screenshots/us-national-parks-alerts-screenshot1.png?s=600)
 
-* Alerts for Acadia National Park.
+* Alerts for Glacier National Park.
 ![screen shot of project](/screenshots/us-national-parks-alerts-screenshot2.png?s=600)
 
 ## Installation and Setup Instructions
