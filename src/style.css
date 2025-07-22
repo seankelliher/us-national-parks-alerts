@@ -11,6 +11,7 @@ body {
     margin-top: 0;
     margin-bottom: 0;
     background: #f7f9ff; /* Surface */
+}
 
 img { 
     max-width: 100%;
@@ -45,7 +46,7 @@ header {
 header::before {
     content: "";
     position: absolute;
-    inset: 0 calc((100vw - 100%) / -2) 0 calc((100vw - 100%) / -2); /* shorthand top, right, bottom, left */
+    inset: 0 calc((100vw - 100%) / -2); /* shorthand top, right, bottom, left */
     background: #2d3135; /* Surface inverse */
     z-index: -1;
 }
@@ -107,14 +108,14 @@ form {
 form::before {
     content: "";
     position: absolute;
-    inset: 0 calc((100vw - 100%) / -2) -1px calc((100vw - 100%) / -2); /* shorthand top, right, bottom, left */
+    inset: 0 calc((100vw - 100%) / -2) -1px; /* shorthand top, right, bottom, left */
     background: #d4e4f6; /* Secondary container */
     border-bottom: 1px solid #bfc7d2; /* Secondary 80 */
     z-index: -1;
 }
 
 input {
-    font-family: "Roboto", sans-serif;
+    font-family: Roboto, sans-serif;
     font-weight: 400;
     font-style: normal;
     font-size: var(--fs0);
@@ -213,7 +214,7 @@ button:hover {
     .overview-about {
         width: 90%;
         margin: 2em 0;
-        margin: 0 0 2em 0;
+        margin: 0 0 2em;
     }
 
     .overview-alert {
@@ -231,13 +232,13 @@ button:hover {
     .overview-about {
         width: 35%;
         margin: 2em 0;
-        margin: 0 0 2em 0;
+        margin: 0 0 2em;
     }
 
     .overview-alert {
         width: 40%;
         margin: 2em 0;
-        margin: 0 0 2em 0;
+        margin: 0 0 2em;
     }
 }
 
@@ -338,7 +339,7 @@ button:hover {
 .lookup-title::before {
     content: "";
     position: absolute;
-    inset: 0 calc((100vw - 100%) / -2) -1px calc((100vw - 100%) / -2); /* shorthand top, right, bottom, left */
+    inset: 0 calc((100vw - 100%) / -2) -1px; /* shorthand top, right, bottom, left */
     border-top: 1px solid #d7dadf; /* Surface dim */
     z-index: -1;
 }
@@ -655,7 +656,7 @@ footer {
 footer::before {
     content: "";
     position: absolute;
-    inset: 0 calc((100vw - 100%) / -2) 0 calc((100vw - 100%) / -2); /* shorthand top, right, bottom, left */
+    inset: 0 calc((100vw - 100%) / -2); /* shorthand top, right, bottom, left */
     background: #2d3135; /* Inverse surface */
     z-index: -1;
 }
@@ -708,7 +709,7 @@ h4 {
 }
 
 p {
-    font-family: "Roboto", sans-serif;
+    font-family: Roboto, sans-serif;
     font-weight: 400;
     font-style: normal;
     font-size: var(--fs0);
@@ -793,7 +794,7 @@ ul {
 }
 
 li {
-    font-family: "Roboto", sans-serif;
+    font-family: Roboto, sans-serif;
     font-weight: 400;
     font-style: normal;
     font-size: var(--fs-0);
